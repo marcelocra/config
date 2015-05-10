@@ -1,0 +1,12 @@
+[user]
+	email = marcelocralmeida@gmail.com
+	name = Marcelo Almeida
+
+[alias]
+    b = branch
+    co = checkout
+    d = diff
+    s = status
+
+[core]
+    autocrlf = false
