@@ -31,36 +31,43 @@ get_git_status() {
 
 get_return_code() {
     if [ $1 -eq 0 ]; then
-        echo "$FGRN$1"
+        echo "$FGRN"
     else
-        echo "$FRED$1"
+        echo "$FRED"
     fi
+    echo "$RS"
+}
+
+separator() {
+    if [ $1 -eq 0 ]; then
+        echo -n "$FGRN"
+    else
+        echo -n "$FRED"
+    fi
+    for i in $(seq 1 $COLUMNS); do
+        echo -n "-"
+    done
+    echo -n "$RS"
 }
 
 set_bash_prompt() {
     # Grab the return code of the last ran command.
-    local ret_code=$?
+    local ret_code="$?"
     local git_branch
     local git_status
     # Run each part of the code in parallel.
     exec 5< <(get_git_status)
     exec 4< <(get_git_branch)
-    exec 3< <(get_return_code $ret_code)
-    read -r <&3 ret_code
     read -r <&4 git_branch
     read -r <&5 git_status
-    if [ "$git_branch" != "" ]; then
+    if [ "${git_branch}" != "" ]; then
         if [ "$git_status" == "*" ]; then
-            git_status="$FRED($git_branch *) "
+            git_status="($git_branch *) "
         else
-            git_status="$FGRN($git_branch) "
-        fi
-    else
-        if [ "$git_status" == "*" ];then
-            git_status="$FRED(Initial commit) "
+            git_status="($git_branch) "
         fi
     fi
-    PS1="$HC- {$ret_code $FYEL\t $FWHT$git_status$FCYN\w$FWHT} \n$FCYN\$$RS "
+    PS1="$(separator $ret_code)$HC$FBLK$USER@$HOSTNAME \D{%F %T} [\w] $git_status\n\$$RS "
 }
 
 # Only set PROMPT_COMMAND once.

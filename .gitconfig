@@ -3,11 +3,13 @@
 	name = Marcelo Almeida
 
 [alias]
+    s = status
     b = branch
     co = checkout
-    d = diff
-    l = log
-    s = status
+    d = ! git diff --color=always | less -r
+    l = ! git log --color=always | less -r
 
 [core]
     autocrlf = false
+    editor = vim
+
