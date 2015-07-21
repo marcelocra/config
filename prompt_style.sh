@@ -58,14 +58,16 @@ set_bash_prompt() {
     # Run each part of the code in parallel.
     exec 5< <(get_git_status)
     exec 4< <(get_git_branch)
-    read -r <&4 git_branch
     read -r <&5 git_status
+    read -r <&4 git_branch
     if [ "${git_branch}" != "" ]; then
         if [ "$git_status" == "*" ]; then
             git_status="($git_branch *) "
         else
             git_status="($git_branch) "
         fi
+    else
+        git_status=""
     fi
     PS1="$(separator $ret_code)$HC$FBLK$USER@$HOSTNAME \D{%F %T} [\w] $git_status\n\$$RS "
 }
