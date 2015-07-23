@@ -29,16 +29,8 @@ get_git_status() {
     fi
 }
 
-get_return_code() {
-    if [ $1 -eq 0 ]; then
-        echo "$FGRN"
-    else
-        echo "$FRED"
-    fi
-    echo "$RS"
-}
-
 separator() {
+    echo -n "\r"
     if [ $1 -eq 0 ]; then
         echo -n "$FGRN"
     else
@@ -69,7 +61,19 @@ set_bash_prompt() {
     else
         git_status=""
     fi
-    PS1="$(separator $ret_code)$HC$FBLK$USER@$HOSTNAME \D{%F %T} [\w] $git_status\n\$$RS "
+
+    # Build the prompt.
+    local separator
+    local user_host
+    local prompt_date
+    local working_dir
+    separator="$(separator $ret_code)"
+    user_host="$USER@$HOSTNAME"
+    prompt_date="\D{%F %T}"
+    working_dir="\w"
+    prompt_char="$RS$HC$FCYN$"
+
+    PS1="$separator$HC$FBLK$user_host $prompt_date $git_status\n[$working_dir]\n$prompt_char$RS "
 }
 
 # Only set PROMPT_COMMAND once.
