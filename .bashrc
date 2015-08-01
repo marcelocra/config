@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-source ~/.dotfiles/ansi_colors.sh
-source ~/.dotfiles/prompt_style.sh
+source ~/.dotfiles/default_bashrc
+source ~/.dotfiles/ansi_colors
+source ~/.dotfiles/prompt_style
 
 export PATH=$PATH:$HOME/.bin
 
