@@ -20,15 +20,6 @@ get_git_branch() {
     echo "$branch"
 }
 
-get_git_status() {
-
-    if [[ "$(git status --porcelain 2> /dev/null)" != "" ]]; then
-        echo "*"
-    else
-        echo ""
-    fi
-}
-
 separator() {
     echo -n "\r"
     if [ $1 -eq 0 ]; then
@@ -39,27 +30,19 @@ separator() {
     for i in $(seq 1 $COLUMNS); do
         echo -n "-"
     done
+    # Reset prompt color.
     echo -n "$RS"
 }
 
 set_bash_prompt() {
     # Grab the return code of the last ran command.
     local ret_code="$?"
-    local git_branch
-    local git_status
-    # Run each part of the code in parallel.
-    exec 5< <(get_git_status)
-    exec 4< <(get_git_branch)
-    read -r <&5 git_status
-    read -r <&4 git_branch
+    local git_branch="$(get_git_branch)"
+
     if [ "${git_branch}" != "" ]; then
-        if [ "$git_status" == "*" ]; then
-            git_status="($git_branch *) "
-        else
-            git_status="($git_branch) "
-        fi
+        git_branch="($git_branch)"
     else
-        git_status=""
+        git_branch=""
     fi
 
     # Build the prompt.
@@ -73,7 +56,7 @@ set_bash_prompt() {
     working_dir="\w"
     prompt_char="$RS$HC$FCYN$"
 
-    PS1="$separator$HC$FBLK$user_host $prompt_date $git_status\n[$working_dir]\n$prompt_char$RS "
+    PS1="$separator$HC$FBLK$user_host $prompt_date $git_branch\n[$working_dir]\n$prompt_char$RS "
 }
 
 # Only set PROMPT_COMMAND once.
