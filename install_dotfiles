@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# Backup all existing files before creating the new symlinks.
+dotfiles=(
+    .bashrc
+    .gitconfig
+    .inputrc
+    .profile
+    .tmux.conf
+    .fonts.conf
+)
+
+old_dotfiles=~/.old_dotfiles
+
+# If backups already exists, they should be addressed first, removing or
+# renaming the backup folder.
+if [[ -d $old_dotfiles ]]; then
+    echo "First, deal with the existing backup of your old dotfiles"
+    echo "The backup is located at $old_dotfiles (rename or remove that folder)"
+    exit 1
+else
+    echo "Backups for existing files will be put in $old_dotfiles"
+    mkdir $old_dotfiles
+fi
+
+for dotfile in ${dotfiles[@]}; do
+    if [[ -f ~/$dotfile ]]; then
+        echo "Replacing existing ~/$dotfile"
+        mv ~/$dotfile $old_dotfiles/$dotfile.bak
+    else
+        echo "Creating ~/$dotfile"
+    fi
+    ln -s ~/.dotfiles/$dotfile ~/$dotfile
+done
+
+
+
