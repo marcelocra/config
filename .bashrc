@@ -3,7 +3,8 @@ source ~/.dotfiles/default_bashrc
 source ~/.dotfiles/ansi_colors
 source ~/.dotfiles/prompt_style
 
-export PATH=$PATH:$HOME/.bin
+# Source all exports, that must be in ~/.exports file.
+source ~/.exports
 
 alias tmux="TERM=screen-256color-bce tmux"
 alias ll="ls -la"
