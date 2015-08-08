@@ -21,13 +21,16 @@ get_git_branch() {
 }
 
 separator() {
-    echo -n "\r"
     if [ $1 -eq 0 ]; then
         echo -n "$FGRN"
     else
         echo -n "$FRED"
     fi
-    for i in $(seq 1 $COLUMNS); do
+    for i in $(seq 1 $((COLUMNS-20))); do
+        if [[ i -eq $((COLUMNS/2 - 10)) ]]; then
+            echo -n "[\D{%F %T}]"
+            continue
+        fi
         echo -n "-"
     done
     # Reset prompt color.
@@ -45,18 +48,20 @@ set_bash_prompt() {
         git_branch=""
     fi
 
-    # Build the prompt.
+    local prompt_char
     local separator
     local user_host
-    local prompt_date
     local working_dir
-    separator="$(separator $ret_code)"
-    user_host="$USER@$HOSTNAME"
-    prompt_date="\D{%F %T}"
-    working_dir="\w"
-    prompt_char="$RS$HC$FCYN$"
 
-    PS1="$separator$HC$FBLK$user_host $prompt_date $git_branch\n[$working_dir]\n$prompt_char$RS "
+    separator="$(separator $ret_code)$HC$FBLK"
+    prompt_char="$RS$HC$FCYN$"
+    user_host="$USER@$HOSTNAME"
+    working_dir="[\w]"
+
+    # Prompt first line.
+    PS1="$separator$user_host $working_dir $git_branch\n"
+    # Prompt second line.
+    PS1="$PS1$prompt_char$RS "
 }
 
 # Only set PROMPT_COMMAND once.
