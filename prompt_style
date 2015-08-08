@@ -26,13 +26,10 @@ separator() {
     else
         echo -n "$FRED"
     fi
-    for i in $(seq 1 $((COLUMNS-20))); do
-        if [[ i -eq $((COLUMNS/2 - 10)) ]]; then
-            echo -n "[\D{%F %T}]"
-            continue
-        fi
+    for i in $(seq 1 $((COLUMNS-21))); do
         echo -n "-"
     done
+    echo -n "[\D{%F %T}]"
     # Reset prompt color.
     echo -n "$RS"
 }
