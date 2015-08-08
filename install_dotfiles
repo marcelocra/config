@@ -8,6 +8,8 @@ dotfiles=(
     .profile
     .tmux.conf
     .fonts.conf
+    .screenrc
+    .ycm_extra_conf.py
 )
 
 old_dotfiles=~/.old_dotfiles
