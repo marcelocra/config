@@ -4,8 +4,9 @@
 1. Clone this repository to ~/.dotfiles.
 2. Check which files you want to use by commenting the unwanted ones in the `dotfiles` array in `~/.dotfiles/install_dotfiles`.
 
-        Example (in case you don't want the .inputrc):
-        ```bash
+    Example (in case you don't want the .inputrc):
+
+        {% highlight bash %}
         dotfiles=(
             .bashrc
             .gitconfig
@@ -14,7 +15,7 @@
             .tmux.conf
             .fonts.conf
         )
-        ```
+        {% endhighlight %}
 
 3. Run the installation script `~/.dotfiles/install_dotfiles`.
 4. Relaunch your terminal or run `. ~/.bashrc`.
