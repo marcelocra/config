@@ -1,5 +1,7 @@
 # .dotfiles
 
+This repository contains several different dotfiles. Many of them works under any Unix/Linux system (assuming only `bash`), though I use them in a Debian distribution. 
+
 ## How to use
 1. Clone this repository to ~/.dotfiles.
 2. Check which files you want to use by commenting the unwanted ones in the `dotfiles` array in `~/.dotfiles/install_dotfiles`.
