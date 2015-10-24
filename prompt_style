@@ -26,6 +26,7 @@ separator() {
     else
         echo -n "$FRED"
     fi
+    # 21 is the size of the date and time shown in the separator line.
     for i in $(seq 1 $((COLUMNS-21))); do
         echo -n "-"
     done
