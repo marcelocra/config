@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+essential_softwares=(
+    curl
+    git
+    tmux
+    vim-gtk
+)
+
+for essential_software in ${essential_softwares[@]}; do
+    echo "Installing $essential_software..."
+    sudo apt-get install -y $essential_software
+    echo
+done
