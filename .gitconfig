@@ -3,11 +3,15 @@
     name = Marcelo Almeida
 
 [alias]
-    s = status
     b = branch
     co = checkout
-    d = ! git diff --color=always | less -r
-    l = ! git log --color=always | less -r
+    d = diff
+    l = log
+    s = status
+    # The 'f' in the beginning stands for 'full'. So 'fd' -> 'full diff',
+    # piping it through less.
+    fd = ! git diff --color=always | less -R
+    fl = ! git log --color=always | less -R
 
 [core]
     autocrlf = false
