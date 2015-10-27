@@ -5,6 +5,8 @@ essential_softwares=(
     git
     tmux
     vim-gtk
+    # Allows tmux to properly deal with clipboard.
+    xsel
 )
 
 for essential_software in ${essential_softwares[@]}; do

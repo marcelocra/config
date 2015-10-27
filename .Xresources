@@ -1,0 +1,24 @@
+! XTerm settings.
+
+! Font settings.
+!
+! Note: increasing the size might cause the underline char to be
+! invisible.
+xterm*renderFont: true
+xterm*faceName: Monospace
+xterm*faceSize: 12
+
+! Copy all selection to the system clipboard.
+xterm*selectToClipboard: true
+
+! Lauch the terminal window in the top right corner.
+xterm*geometry: -0+0
+
+! Set the terminal colors.
+xterm*background: black
+xterm*foreground: white
+xterm*cursorColor: magenta
+
+! Allow using Alt as Meta.
+xterm*metaSendEscape: true
+xterm*eightBitInput: false

@@ -2,13 +2,14 @@
 
 # Backup all existing files before creating the new symlinks.
 dotfiles=(
+    .Xresources
     .bashrc
+    .fonts.conf
     .gitconfig
     .inputrc
     .profile
-    .tmux.conf
-    .fonts.conf
     .screenrc
+    .tmux.conf
     .ycm_extra_conf.py
 )
 
@@ -39,5 +40,12 @@ done
 if [[ ! -f ~/.exports ]]; then
     echo '#!/usr/bin/env bash' > ~/.exports
     echo '' >> ~/.exports
+fi
+
+# All settings specific to a system should be in the ~/.my_settings file.
+# Careful: this one is not versioned by git.
+if [[ ! -f ~/.my_settings ]]; then
+    echo '#!/usr/bin/env bash' > ~/.my_settings
+    echo '' >> ~/.my_settings
 fi
 
