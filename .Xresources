@@ -5,7 +5,7 @@
 ! Note: increasing the size might cause the underline char to be
 ! invisible.
 xterm*renderFont: true
-xterm*faceName: Monospace
+xterm*faceName: Meslo LG M
 xterm*faceSize: 12
 
 ! Copy all selection to the system clipboard.
