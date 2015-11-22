@@ -8,12 +8,21 @@
     d = diff
     l = log
     s = status
+
     # The 'f' in the beginning stands for 'full'. So 'fd' -> 'full diff',
-    # piping it through less.
+    # piping it through less (with colors!).
     fd = ! git diff --color=always | less -R
     fl = ! git log --color=always | less -R
+
+    # One line colored log with date, committer and other info.
+    lol = log --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(cyan)%d%C(reset)'
+    # Similar to the log version above, but also shows the graph, with relative
+    dag = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(cyan)%d%C(reset)' --all
+    # The next two commands are the same as the previous two, but with date formatted differently.
+    dagd = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(magenta)%aD%C(reset) %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(cyan)%d%C(reset)' --all
+    lold = log --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(magenta)%aD%C(reset) %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(cyan)%d%C(reset)'
+
 
 [core]
     autocrlf = false
     editor = vim
-

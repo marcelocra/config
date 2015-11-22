@@ -6,7 +6,7 @@
 ! invisible.
 xterm*renderFont: true
 xterm*faceName: Meslo LG M
-xterm*faceSize: 12
+xterm*faceSize: 10
 
 ! Copy all selection to the system clipboard.
 xterm*selectToClipboard: true
@@ -22,3 +22,6 @@ xterm*cursorColor: magenta
 ! Allow using Alt as Meta.
 xterm*metaSendEscape: true
 xterm*eightBitInput: false
+
+! Use visual bell.
+xterm*visualBell: true

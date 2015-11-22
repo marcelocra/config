@@ -13,11 +13,17 @@ source ~/.my_settings
 #alias tmux="TERM=screen-256color-bce tmux"
 alias tmux="TERM=xterm-256color tmux"
 alias ll="ls -la"
+alias l="ls -l"
 alias vi="vim.tiny -u NONE"
 alias gvim="vim -g --remote-silent"
 alias files="nautilus"
 alias sag="sudo apt-get"
 alias sagi="sag install"
+alias tma="tmux attach"
 
 # Make CapsLock a new Ctrl (use this if you have no system way of doing this).
 # setxkbmap -option ctrl:nocaps
+
+# Test for the existance of 'xrdb' command and if it exists, reload the
+# ~/.Xresources file.
+hash xrdb &> /dev/null && xrdb ~/.Xresources
