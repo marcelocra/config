@@ -6,7 +6,7 @@
 ! invisible.
 xterm*renderFont: true
 xterm*faceName: Meslo LG M
-xterm*faceSize: 10
+xterm*faceSize: 11
 
 ! Copy all selection to the system clipboard.
 xterm*selectToClipboard: true
