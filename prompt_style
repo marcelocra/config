@@ -62,8 +62,18 @@ set_bash_prompt() {
     PS1="$PS1$prompt_char$RS "
 }
 
-# Only set PROMPT_COMMAND once.
-if [ "$PROMPT_COMMAND" == "" ];then
-    PROMPT_COMMAND="set_bash_prompt;$PROMPT_COMMAND"
-fi
+new_bash_prompt () {
+    if [ "$?" -eq 0 ]; then
+        PS1="$FGRN"
+    else
+        PS1="$FRED"
+    fi
 
+    for i in `seq $COLUMNS`; do
+        PS1="$PS1="
+    done
+
+    PS1="$PS1$RS$HC$FBLK\n[\D{%F %T}] \w\n$FCYN\$$RS "
+}
+
+PROMPT_COMMAND="new_bash_prompt"
