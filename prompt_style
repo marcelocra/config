@@ -63,17 +63,42 @@ set_bash_prompt() {
 }
 
 new_bash_prompt () {
-    if [ "$?" -eq 0 ]; then
-        PS1="$FGRN"
+    local ret_code="$?"
+    local date_size=10  # 2016-01-01
+    local time_size=8  # 00:00:00
+    local separator_size=1  # @
+    local num_spaces=$(( COLUMNS - ${#USER} - ${#HOSTNAME} - date_size - time_size - separator_size ))  # 1 for the @
+    local initial_spaces=$(( (num_spaces/2) - 1 ))
+    local remaining_spaces=$(( num_spaces - initial_spaces ))
+
+    # Change background color to red if the previous command failed.
+    if [ $ret_code -eq 0 ]; then
+        PS1="$BWHT"
     else
-        PS1="$FRED"
+        PS1="$BRED"
     fi
 
-    for i in `seq $COLUMNS`; do
-        PS1="$PS1="
+    # Insert the date, user,  hostname and time in the separating line, in the following format:
+    # "2016-01-01  ...  user@hostname  ...  00:00:00", with black font and white background.
+    PS1="$PS1$FBLK\D{%F}"
+    # The first part of the separating line.
+    for i in `seq $((initial_spaces))`; do
+        PS1="$PS1 "
     done
+    # Add the "user@hostname" part.
+    PS1="$PS1$USER@$HOSTNAME"
+    # The second part of the separating line.
+    for i in `seq $((remaining_spaces))`; do
+        PS1="$PS1 "
+    done
+    PS1="$PS1\D{%T}"
 
-    PS1="$PS1$RS$HC$FBLK\n[\D{%F %T}] \w\n$FCYN\$$RS "
+    # Finish the separating line, reseting the colors.
+    PS1="$PS1$RS\n"
+    # Add working directory.
+    PS1="$PS1$HC$FBLE[\w]\n"
+    # Add prompt char.
+    PS1="$PS1$FWHT\$$RS "
 }
 
 PROMPT_COMMAND="new_bash_prompt"
