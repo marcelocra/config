@@ -1,29 +1,19 @@
 #!/usr/bin/env bash
-source ~/.dotfiles/default_bashrc
-source ~/.dotfiles/ansi_colors
-source ~/.dotfiles/prompt_style
 
-# Source all exports, which must be in ~/.exports file.
+# -----------------------------------------------------------
+# These files are inside ~/.dotfiles to be tracked by git.
+# -----------------------------------------------------------
+
+source ~/.dotfiles/default_bashrc.sh
+source ~/.dotfiles/custom_bashrc.sh
+
+# ----------------------------------------------------
+# Next files are not supposed to be tracked by git.
+# ----------------------------------------------------
+
+# All exports should be in this file.
 source ~/.exports
 
-# Source any system setting not intended for git to track.
+# All particular system settings should be here.
 source ~/.my_settings
 
-# Previous version that used to work. Trying this new one.
-#alias tmux="TERM=screen-256color-bce tmux"
-alias tmux="TERM=xterm-256color tmux"
-alias ll="ls -la"
-alias l="ls -l"
-alias vi="vim.tiny -u NONE"
-alias gvim="vim -g --remote-silent"
-alias files="nautilus"
-alias sag="sudo apt-get"
-alias sagi="sag install"
-alias tma="tmux attach"
-
-# Make CapsLock a new Ctrl (use this if you have no system way of doing this).
-# setxkbmap -option ctrl:nocaps
-
-# Test for the existance of 'xrdb' command and if it exists, reload the
-# ~/.Xresources file.
-hash xrdb &> /dev/null && xrdb ~/.Xresources
