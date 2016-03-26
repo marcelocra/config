@@ -83,7 +83,33 @@ set_bash_prompt() {
     PS1="$PS1$prompt_char$RS "
 }
 
-PROMPT_COMMAND="set_bash_prompt"
+simple_prompt () {
+    local return_code="$?"
+    local time_len=8  # 00:00:00
+    local date_len=10  # 2000/01/01
+    local num_spaces=$(( COLUMNS - time_len - date_len - ${#USER} - \
+        ${#HOSTNAME} - 1 ))  # `1` for the `@` sign at user@host.
+    local initial_spaces=$(( (num_spaces / 2) - 1 ))
+    local remaining_spaces=$(( num_spaces - initial_spaces ))
+
+    PS1="$BWHT"
+
+    if [ $return_code -ne 0 ]; then
+        PS1="$BRED"
+    fi
+
+    PS1="$FBLK$PS1\D{%F}"
+    for i in $(seq $initial_spaces); do
+        PS1="$PS1 "
+    done
+    PS1="$PS1\u@$HOSTNAME"
+    for i in $(seq $remaining_spaces); do
+        PS1="$PS1 "
+    done
+    PS1="$PS1\D{%T}$RS\n[\w]\n$ "
+}
+
+PROMPT_COMMAND="simple_prompt"
 
 # --------------------------------
 # Create a bunch of new aliases
@@ -92,7 +118,7 @@ PROMPT_COMMAND="set_bash_prompt"
 # Previous version that used to work. Trying this new one.
 #alias tmux="TERM=screen-256color-bce tmux"
 alias tmux="TERM=xterm-256color tmux"
-alias ll="ls -la"
+alias ll="ls -lFa"
 alias l="ls -l"
 alias vi="vim.tiny -u NONE"
 alias gvim="vim -g --remote-silent"
