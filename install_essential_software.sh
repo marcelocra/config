@@ -3,8 +3,8 @@
 essential_softwares=(
     curl
     git
-    # Allows easy control of audio output devices.
-    pavucontrol
+    # Allows easy control of audio output devices. Install if necessary.
+    #pavucontrol
     # Makes it easier for programs that interact with the command line,
     # such as Clojure's REPL.
     rlwrap
