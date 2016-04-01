@@ -20,8 +20,8 @@ if hash xinput 2>/dev/null; then
     if udevadm info --export-db | grep ID_INPUT_MOUSE=1 &>/dev/null; then
         # Try to increase the mouse sensitivity. Fails quietly. For explanation about what the commands are doing
         # check the version above.
-        device_id=$(xinput | sed -r -n 's/^.*Logitech Unifying Device.*a.*id=([0-9]+).*/\1/p')
+        device_id=$(xinput | sed -r -n 's/^.*Logitech.*M325.*id=([0-9]+).*/\1/p')
         prop_id=$(xinput list-props $device_id | sed -n -r 's/^.*Device Accel Constant Deceleration \(([0-9]+)\).*/\1/p')
-        xinput set-prop $device_id $prop_id 8.0 &>/dev/null
+        xinput set-prop $device_id $prop_id 3.0 &>/dev/null
     fi
 fi
