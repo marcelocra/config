@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# --------------------
-# ANSI color codes
-# --------------------
+#-------------------------------------------------------------------------------
+# Prompt colors.
+#-------------------------------------------------------------------------------
 
 RS="\[\033[0m\]"    # reset
 HC="\[\033[1m\]"    # hicolor
@@ -25,11 +25,11 @@ BMAG="\[\033[45m\]" # background magenta
 BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
-# --------------------
-# Setup the prompt
-# --------------------
+#-------------------------------------------------------------------------------
+# Functions.
+#-------------------------------------------------------------------------------
 
-get_git_branch() {
+function get_git_branch() {
     local branch
 
     if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
@@ -44,7 +44,7 @@ get_git_branch() {
     echo "$branch"
 }
 
-set_bash_prompt() {
+function set_bash_prompt() {
     # Grab the return code of the last ran command.
     local ret_code="$?"
     local git_branch="$(get_git_branch)"
@@ -83,7 +83,7 @@ set_bash_prompt() {
     PS1="$PS1$prompt_char$RS "
 }
 
-simple_prompt () {
+function simple_prompt () {
     local return_code="$?"
     local time_len=8  # 00:00:00
     local date_len=10  # 2000/01/01
@@ -109,27 +109,41 @@ simple_prompt () {
     PS1="$PS1\D{%T}$RS\n[\w]\n$ "
 }
 
-PROMPT_COMMAND="simple_prompt"
+function docker_clean_all () {
+    docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+}
 
-# --------------------------------
-# Create a bunch of new aliases
-# --------------------------------
+#-------------------------------------------------------------------------------
+# Aliases.
+#-------------------------------------------------------------------------------
 
-# Previous version that used to work. Trying this new one.
+# Tmux stuff.
+# Previous version that used to work.
 #alias tmux="TERM=screen-256color-bce tmux"
+# New version, that is currently working.
 alias tmux="TERM=xterm-256color tmux"
-alias ll="ls -lFa"
-alias l="ls -l"
-alias vi="vim.tiny -u NONE"
-alias gvim="vim -g --remote-silent"
-alias files="nautilus"
-alias sag="sudo apt-get"
-alias sagi="sag install"
 alias tma="tmux attach"
 
-# ----------------------------
-# Commands to improve setup
-# ----------------------------
+# File stuff.
+alias ll="ls -lFa"
+alias l="ls -l"
+alias files="nautilus"
+alias trash="gvfs-trash"
+
+# Vim stuff.
+alias vi="vim.tiny -u NONE"
+alias gvim="vim -g --remote-silent"
+
+# Install stuff.
+alias sag="sudo apt-get"
+alias sagi="sag install"
+
+#-------------------------------------------------------------------------------
+# Commands to improve setup.
+#-------------------------------------------------------------------------------
+
+# Run the given function before generating the prompt.
+PROMPT_COMMAND="simple_prompt"
 
 # Make CapsLock a new Ctrl (use this if you have no system way of doing this).
 # setxkbmap -option ctrl:nocaps
@@ -137,3 +151,31 @@ alias tma="tmux attach"
 # Test for the existance of 'xrdb' command and if it exists, reload the
 # ~/.Xresources file.
 hash xrdb &> /dev/null && xrdb ~/.Xresources
+
+# If xinput is installed, change the sensitivity for some of the input methods.
+# Note that the values of the properties are set for this system in particular.
+# They might be different in another system.
+if hash xinput 2>/dev/null; then
+    # Check if touchpad is available and try to increase its sensitivity,
+    # failing quietly.
+    if udevadm info --export-db | grep ID_INPUT_TOUCHPAD=1 &>/dev/null; then
+        # Find the id of the device that controls the touchpad. Here, where I
+        # set 'TouchPad', must be the unique part of your device name that can
+        # be used to find its id.
+        device_id=$(xinput | sed -n 's/^.*TouchPad.*id=\([0-9]*\).*/\1/p')
+        # Find the id of the property that controls device deceleration.
+        prop_id=$(xinput list-props $device_id | sed -n -r 's/^.*Device Accel Constant Deceleration \(([0-9]+)\).*/\1/p')
+        # Set the property. Choose the value that most suit you.
+        xinput set-prop $device_id $prop_id 8.0 &>/dev/null
+    fi
+
+    # Check if mouse is available and try to increase its sensitivity, failing
+    # quietly.
+    if udevadm info --export-db | grep ID_INPUT_MOUSE=1 &>/dev/null; then
+        # For explanation about what the commands are doing, check the version
+        # above.
+        device_id=$(xinput | sed -r -n 's/^.*Logitech.*M325.*id=([0-9]+).*/\1/p')
+        prop_id=$(xinput list-props $device_id | sed -n -r 's/^.*Device Accel Constant Deceleration \(([0-9]+)\).*/\1/p')
+        xinput set-prop $device_id $prop_id 3.0 &>/dev/null
+    fi
+fi
