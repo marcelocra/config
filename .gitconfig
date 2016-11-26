@@ -8,6 +8,7 @@
     d = diff
     l = log
     s = status
+    ds = diff --stat  # Summary of current diff.
 
     # The 'f' in the beginning stands for 'full'. So 'fd' -> 'full diff',
     # piping it through less (with colors!).

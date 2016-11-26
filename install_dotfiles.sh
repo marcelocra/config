@@ -9,6 +9,7 @@ function create_new_dotfiles() {
         .bashrc
         .fonts.conf
         .gitconfig
+        .hgrc
         .inputrc
         .profile
         .screenrc

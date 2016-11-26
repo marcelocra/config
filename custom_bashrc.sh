@@ -138,6 +138,9 @@ alias gvim="vim -g --remote-silent"
 alias sag="sudo apt-get"
 alias sagi="sag install"
 
+# Docker.
+alias di="docker images --format \"{{.Repository}}:{{.Tag}} -> {{.Size}}\""
+
 #-------------------------------------------------------------------------------
 # Commands to improve setup.
 #-------------------------------------------------------------------------------
