@@ -1,5 +1,5 @@
 [user]
-    email = marcelocralmeida@gmail.com
+    email = marcelocralmeida@gmail.com   
     name = Marcelo Almeida
 
 [alias]
@@ -8,6 +8,7 @@
     d = diff
     l = log
     s = status
+    st = status
     ds = diff --stat  # Summary of current diff.
 
     # The 'f' in the beginning stands for 'full'. So 'fd' -> 'full diff',
@@ -26,3 +27,7 @@
 [core]
     autocrlf = false
     editor = vim
+
+[includeIf "gitdir:~/projects/kuadro/"]
+    path = ~/projects/kuadro/.gitconfig
+

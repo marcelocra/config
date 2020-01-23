@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# Settings.
+
+# Configure Evoluent vertical mouse so that back/forward buttons work as
+# expected.
+xinput set-button-map \
+  $(xinput | sed -nre 's/.*Evoluent\ VerticalMouse.*id\=([0-9]+).*/\1/p' | head -n1) \
+  1 2 3 4 5 6 7 8 10 9
+
+
+# Exports.
+export PATH="${PATH}:/snap/bin"
+
 #-------------------------------------------------------------------------------
 # Prompt colors.
 #-------------------------------------------------------------------------------
@@ -122,24 +134,14 @@ function docker_clean_all () {
 #alias tmux="TERM=screen-256color-bce tmux"
 # New version, that is currently working.
 alias tmux="TERM=xterm-256color tmux"
-alias tma="tmux attach"
 
 # File stuff.
 alias ll="ls -lFa"
 alias l="ls -l"
-alias files="nautilus"
 alias trash="gvfs-trash"
 
 # Vim stuff.
 alias vi="vim.tiny -u NONE"
-alias gvim="vim -g --remote-silent"
-
-# Install stuff.
-alias sag="sudo apt-get"
-alias sagi="sag install"
-
-# Docker.
-alias di="docker images --format \"{{.Repository}}:{{.Tag}} -> {{.Size}}\""
 
 #-------------------------------------------------------------------------------
 # Commands to improve setup.
@@ -147,38 +149,3 @@ alias di="docker images --format \"{{.Repository}}:{{.Tag}} -> {{.Size}}\""
 
 # Run the given function before generating the prompt.
 PROMPT_COMMAND="simple_prompt"
-
-# Make CapsLock a new Ctrl (use this if you have no system way of doing this).
-# setxkbmap -option ctrl:nocaps
-
-# Test for the existance of 'xrdb' command and if it exists, reload the
-# ~/.Xresources file.
-hash xrdb &> /dev/null && xrdb ~/.Xresources
-
-# If xinput is installed, change the sensitivity for some of the input methods.
-# Note that the values of the properties are set for this system in particular.
-# They might be different in another system.
-if hash xinput 2>/dev/null; then
-    # Check if touchpad is available and try to increase its sensitivity,
-    # failing quietly.
-    if udevadm info --export-db | grep ID_INPUT_TOUCHPAD=1 &>/dev/null; then
-        # Find the id of the device that controls the touchpad. Here, where I
-        # set 'TouchPad', must be the unique part of your device name that can
-        # be used to find its id.
-        device_id=$(xinput | sed -n 's/^.*TouchPad.*id=\([0-9]*\).*/\1/p')
-        # Find the id of the property that controls device deceleration.
-        prop_id=$(xinput list-props $device_id | sed -n -r 's/^.*Device Accel Constant Deceleration \(([0-9]+)\).*/\1/p')
-        # Set the property. Choose the value that most suit you.
-        xinput set-prop $device_id $prop_id 8.0 &>/dev/null
-    fi
-
-    # Check if mouse is available and try to increase its sensitivity, failing
-    # quietly.
-    if udevadm info --export-db | grep ID_INPUT_MOUSE=1 &>/dev/null; then
-        # For explanation about what the commands are doing, check the version
-        # above.
-        device_id=$(xinput | sed -r -n 's/^.*Logitech.*M325.*id=([0-9]+).*/\1/p')
-        prop_id=$(xinput list-props $device_id | sed -n -r 's/^.*Device Accel Constant Deceleration \(([0-9]+)\).*/\1/p')
-        xinput set-prop $device_id $prop_id 3.0 &>/dev/null
-    fi
-fi
