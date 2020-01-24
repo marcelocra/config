@@ -2,6 +2,11 @@
 
 # Settings.
 
+# Configure expert mouse.
+xinput set-button-map \
+  $(xinput list | sed -nre 's/.*Kensington\ Expert\ Mouse.*id\=([0-9]+).*/\1/p') \
+  8 1 3 4 5 6 7 9 0 0
+
 # Configure Evoluent vertical mouse so that back/forward buttons work as
 # expected.
 xinput set-button-map \

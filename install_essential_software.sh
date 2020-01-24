@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 sudo apt update \
-    && sudo apt install \
+    && sudo apt install -y \
         curl \
         git \
         tmux \
-        tree
+        tree \
+        xsel
