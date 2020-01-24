@@ -2,16 +2,28 @@
 
 # Settings.
 
-# Configure expert mouse.
-xinput set-button-map \
-  $(xinput list | sed -nre 's/.*Kensington\ Expert\ Mouse.*id\=([0-9]+).*/\1/p') \
-  8 1 3 4 5 6 7 9 0 0
+# Configure expert mouse, if available.
+setup_expert_mouse() {
+    local device_id
+
+    device_id="$(xinput list | sed -nre 's/.*Kensington\ Expert\ Mouse.*id\=([0-9]+).*/\1/p' | head -n1)"
+    if [ ! -z "$device_id" ]; then
+        xinput set-button-map $device_id 8 1 3 4 5 6 7 9 0 0
+    fi
+}
+setup_expert_mouse
 
 # Configure Evoluent vertical mouse so that back/forward buttons work as
 # expected.
-xinput set-button-map \
-  $(xinput | sed -nre 's/.*Evoluent\ VerticalMouse.*id\=([0-9]+).*/\1/p' | head -n1) \
-  1 2 3 4 5 6 7 8 10 9
+setup_evoluent_mouse() {
+    local device_id
+
+    device_id="$(xinput | sed -nre 's/.*Evoluent\ VerticalMouse.*id\=([0-9]+).*/\1/p' | head -n1)"
+    if [ ! -z "$device_id" ]; then
+        xinput set-button-map $device_id 1 2 3 4 5 6 7 8 10 9
+    fi
+}
+setup_evoluent_mouse
 
 
 # Exports.
