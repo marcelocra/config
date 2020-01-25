@@ -25,3 +25,11 @@ xterm*eightBitInput: false
 
 ! Use visual bell.
 xterm*visualBell: true
+
+! Font rendering in Debian.
+Xft.autohint: 1
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
