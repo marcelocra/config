@@ -160,6 +160,9 @@ alias trash="gvfs-trash"
 # Vim stuff.
 alias vi="vim.tiny -u NONE"
 
+alias inst="sudo apt install"
+alias purge="sudo apt purge"
+
 #-------------------------------------------------------------------------------
 # Commands to improve setup.
 #-------------------------------------------------------------------------------

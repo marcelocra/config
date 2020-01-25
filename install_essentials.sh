@@ -12,4 +12,8 @@ sudo apt update \
         fonts-monoid \
         fonts-source-code-pro \
         fonts-hack \
-        fonts-liberation
+        fonts-liberation \
+        fonts-inconsolata \
+        fonts-croscore \
+        fonts-crosextra-caladea \
+        fonts-crosextra-carlito
