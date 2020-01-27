@@ -4,5 +4,11 @@
     "explorer.openEditors.visible": 0,
     "editor.fontFamily": "'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', 'monospace', monospace",
     "editor.minimap.enabled": false,
-    "window.title": "${dirty}${activeEditorLong}${separator}${appName}"
+    "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never"
 }

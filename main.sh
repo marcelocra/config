@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Settings.
 
@@ -60,9 +60,6 @@ export PATH="${PATH}:${HOME}/bin"
 # --------
 
 alias tmux="TERM=xterm-256color tmux"
-
-alias ll="ls -lFa"
-alias l="ls -l"
 
 alias vi="vim.tiny -u NONE"
 
