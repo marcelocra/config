@@ -6,7 +6,6 @@
     "explorer.openEditors.visible": 0,
     "editor.fontFamily": "'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', 'monospace', monospace",
     "editor.minimap.enabled": false,
-    "terminal.integrated.fontSize": 12,
     "python.jediEnabled": false,
     "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
     "eslint.alwaysShowStatus": true,
@@ -15,11 +14,14 @@
         "source.fixAll.eslint": true
     },
     "javascript.updateImportsOnFileMove.enabled": "never",
-    "[markdown]": {
+    "[markdown|mdx]": {
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 80,
         "editor.wrappingIndent": "same",
         "editor.quickSuggestions": false,
-        "editor.rulers": [80]
-    }
+        "editor.rulers": [80],
+    },
+    "workbench.colorTheme": "Monokai",
+    "terminal.integrated.fontSize": 18,
+    "editor.fontSize": 16
 }

@@ -2,6 +2,7 @@
 
 sudo apt update \
     && sudo apt install -y \
+        build-essential \
         curl \
         git \
         tmux \
@@ -16,4 +17,9 @@ sudo apt update \
         fonts-inconsolata \
         fonts-croscore \
         fonts-crosextra-caladea \
-        fonts-crosextra-carlito
+        fonts-crosextra-carlito \
+    && sudo apt install -y \
+        python3-dev \
+        python3-pip \
+        pip install setuptools wheel ipython
+

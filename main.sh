@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 # Settings.
+# ---------
 
 # Configure expert mouse, if available.
 setup_expert_mouse() {
@@ -50,6 +51,26 @@ reduce_speed_of_logitech_mouse() {
 }
 reduce_speed_of_logitech_mouse
 
+tmx() {
+    # Try to create a new session.
+    tmux new -s $1 > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        return 0
+    fi
+
+    echo "Trying to reuse session $1..."
+    sleep 0.5
+    # Try to load existing session.
+    tmux attach-session -t $1 > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        return 0
+    fi
+
+    # Something else happened.
+    echo "An error happened. Couldn't load $1"
+    return 1
+}
+
 # Exports.
 # --------
 
@@ -66,4 +87,10 @@ alias vi="vim.tiny -u NONE"
 alias inst="sudo apt install"
 alias purge="sudo apt purge"
 
-alias eg="egrep"
+alias eg=egrep
+
+alias pip=pip3
+alias python=python3
+
+alias l="ls -lh"
+alias ll="ls -lFha"
