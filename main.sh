@@ -74,8 +74,9 @@ tmx() {
 # Exports.
 # --------
 
-export PATH="${PATH}:/snap/bin"
-export PATH="${PATH}:${HOME}/bin"
+export PATH="${PATH}:/snap/bin"  # snapcraft
+export PATH="${PATH}:${HOME}/bin"  # my binaries
+export PATH="${PATH}:${HOME}/.local/bin"  # pip3 packages
 
 # Aliases.
 # --------
@@ -94,3 +95,6 @@ alias python=python3
 
 alias l="ls -lh"
 alias ll="ls -lFha"
+
+alias szsh="source ${HOME}/.zshrc"
+alias sbash="source ${HOME}/.bashrc"
