@@ -28,6 +28,7 @@
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 100,
         "editor.wrappingIndent": "same",
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.quickSuggestions": false,
         "editor.rulers": [
             100
