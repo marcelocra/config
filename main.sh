@@ -93,7 +93,7 @@ alias eg=egrep
 alias pip=pip3
 alias python=python3
 
-alias l="ls -lh"
+alias l="ls -lFh"
 alias ll="ls -lFha"
 
 alias szsh="source ${HOME}/.zshrc"

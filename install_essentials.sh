@@ -6,24 +6,28 @@ essential_stuff() {
     local stuff
     stuff=(
         # programs
+        apt-transport-https
         build-essential
+        ca-certificates
         curl
         git
+        gnupg2
+        python3-dev
+        python3-pip
+        software-properties-common
         tmux
         tree
         xsel
-        python3-dev
-        python3-pip
         # fonts
-        fonts-firacode
-        fonts-monoid
-        fonts-hack
-        fonts-source-code-pro
-        fonts-liberation
-        fonts-inconsolata
         fonts-croscore
         fonts-crosextra-caladea
         fonts-crosextra-carlito
+        fonts-firacode
+        fonts-hack
+        fonts-inconsolata
+        fonts-liberation
+        fonts-monoid
+        fonts-source-code-pro
     )
 
     echo 'Installing programs and fonts...' | tee -a $tmp
@@ -60,6 +64,19 @@ essential_stuff() {
             * ) echo 'Please answer yes or no.';;
         esac
     done
+}
+
+install_docker() {
+    sudo apt remove docker docker-engine docker.io containerd runc \
+        && curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - \
+        && sudo apt-key fingerprint 0EBFCD88 \
+        && sudo add-apt-repository \
+            "deb [arch=amd64] https://download.docker.com/linux/debian \
+            $(lsb_release -cs) \
+            stable" \
+        && sudo apt update \
+        && sudo apt install docker-ce docker-ce-cli containerd.io \
+        && sudo docker run hello-world
 }
 
 sudo apt update \

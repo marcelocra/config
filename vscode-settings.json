@@ -6,6 +6,7 @@
     "explorer.openEditors.visible": 0,
     "editor.fontFamily": "'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', 'monospace', monospace",
     "editor.minimap.enabled": false,
+    "editor.wordWrapColumn": 120,
     "python.jediEnabled": false,
     "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
     "eslint.alwaysShowStatus": true,
@@ -19,10 +20,22 @@
         "editor.wordWrapColumn": 80,
         "editor.wrappingIndent": "same",
         "editor.quickSuggestions": false,
-        "editor.rulers": [80],
+        "editor.rulers": [
+            80
+        ],
     },
-    "workbench.colorTheme": "Monokai",
-    "terminal.integrated.fontSize": 18,
-    "editor.fontSize": 16,
-    "editor.wordWrap": "wordWrapColumn"
+    "[javascript|javascriptreact]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 100,
+        "editor.wrappingIndent": "same",
+        "editor.quickSuggestions": false,
+        "editor.rulers": [
+            100
+        ],
+    },
+    "workbench.colorTheme": "Default Light+",
+    "editor.fontSize": 12,
+    "editor.wordWrap": "wordWrapColumn",
+    "workbench.activityBar.visible": false,
+    "terminal.integrated.fontSize": 12
 }
