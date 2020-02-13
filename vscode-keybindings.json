@@ -1,5 +1,49 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+    // {
+    //     "key": "ctrl+,",
+    //     "command": "workbench.action.navigateBack"
+    // },
+    // {
+    //     "key": "ctrl+alt+-",
+    //     "command": "-workbench.action.navigateBack"
+    // },
+    // {
+    //     "key": "ctrl+.",
+    //     "command": "workbench.action.navigateForward"
+    // },
+    // {
+    //     "key": "ctrl+shift+-",
+    //     "command": "-workbench.action.navigateForward"
+    // },
+    // {
+    //     "key": "ctrl+,",
+    //     "command": "-workbench.action.openSettings"
+    // },
+    // {
+    //     "key": "ctrl+shift+,",
+    //     "command": "-editor.action.inPlaceReplace.up",
+    //     "when": "editorTextFocus && !editorReadonly"
+    // },
+    // {
+    //     "key": "ctrl+.",
+    //     "command": "-editor.action.quickFix",
+    //     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    // },
+    // {
+    //     "key": "ctrl+.",
+    //     "command": "-problems.action.showQuickFixes",
+    //     "when": "problemFocus"
+    // },
+    // {
+    //     "key": "ctrl+.",
+    //     "command": "-settings.action.editFocusedSetting",
+    //     "when": "inSettingsSearch"
+    // },
+    // {
+    //     "key": "ctrl+shift+,",
+    //     "command": "workbench.action.openSettings"
+    // },
     {
         "key": "ctrl+k ctrl+a",
         "command": "workbench.action.toggleActivityBarVisibility"
