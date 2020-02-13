@@ -34,7 +34,6 @@
             100
         ],
     },
-    "workbench.colorTheme": "Solarized Light",
     "editor.fontSize": 12,
     "editor.wordWrap": "wordWrapColumn",
     "workbench.activityBar.visible": false,
