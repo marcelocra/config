@@ -45,6 +45,10 @@
     //     "command": "workbench.action.openSettings"
     // },
     {
+        "key": "ctrl+k ctrl+v",
+        "command": "toggleVim"
+    },
+    {
         "key": "ctrl+k ctrl+a",
         "command": "workbench.action.toggleActivityBarVisibility"
     },
