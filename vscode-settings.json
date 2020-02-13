@@ -34,9 +34,59 @@
             100
         ],
     },
-    "workbench.colorTheme": "Solarized Light",
     "editor.fontSize": 12,
     "editor.wordWrap": "wordWrapColumn",
     "workbench.activityBar.visible": false,
-    "terminal.integrated.fontSize": 12
+    "terminal.integrated.fontSize": 12,
+    "gitlens.defaultDateStyle": "absolute",
+    "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:MM",
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.surround": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "f"],
+        "after": ["<esc>"]
+      },
+      {
+        "before": ["f", "j"],
+        "after": ["<esc>"]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["g", "j"],
+        "commands": ["workbench.action.previousEditorInGroup"]
+      },
+      {
+        "before": ["g", "k"],
+        "commands": ["workbench.action.nextEditorInGroup"]
+      },
+      {
+        "before": ["<c-l>"],
+        "after": ["<c-w>", "<c-w>"]
+      },
+      {
+        "before": ["<c-h>"],
+        "after": ["<c-w>", "<c-w>"]
+      },
+      {
+        "before": ["<leader>", "d"],
+        "after": ["d", "d"]
+      },
+      {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+      }
+    ],
+    "vim.leader": ",",
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false
+    }
+  
 }
