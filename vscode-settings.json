@@ -87,6 +87,9 @@
     "vim.handleKeys": {
       "<C-a>": false,
       "<C-f>": false
-    }
+    },
+    "editor.foldingStrategy": "indentation",
+    "scm.diffDecorationsGutterWidth": 1,
+    "problems.showCurrentInStatus": true
   
 }
