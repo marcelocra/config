@@ -89,7 +89,7 @@
       "<C-f>": false
     },
     "editor.foldingStrategy": "indentation",
-    "scm.diffDecorationsGutterWidth": 1,
+    "scm.diffDecorationsGutterWidth": 2,
     "problems.showCurrentInStatus": true
   
 }

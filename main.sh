@@ -73,10 +73,37 @@ tmx() {
 
 # Exports.
 # --------
+# Add a number of paths to PATH.
 
-export PATH="${PATH}:/snap/bin"  # snapcraft
-export PATH="${PATH}:${HOME}/bin"  # my binaries
-export PATH="${PATH}:${HOME}/.local/bin"  # pip3 packages
+# Snapcraft.
+if [ -d "/snap/bin" ] ; then
+    export PATH="${PATH}:/snap/bin"
+fi
+
+# My binaries.
+if [ -d "$HOME/bin" ] ; then
+    export PATH="${PATH}:${HOME}/bin"
+fi
+
+# Private binaries (and also pip3 package dir).
+if [ -d "$HOME/.local/bin" ] ; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Node stuff.
+#
+# NVM should be loaded first, as other exports and commands will need a
+# valid Node installation.
+if [ -d "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+fi
+
+# Yarn global binaries.
+if [ -d "$HOME/.config/yarn/global" ] ; then
+    export PATH="${PATH}:`yarn global bin`"
+fi
 
 # Aliases.
 # --------
@@ -98,3 +125,9 @@ alias ll="ls -lFha"
 
 alias szsh="source ${HOME}/.zshrc"
 alias sbash="source ${HOME}/.bashrc"
+
+# Other scripts.
+# --------------
+
+# Install fzf.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

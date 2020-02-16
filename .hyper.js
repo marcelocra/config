@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 13,
+    fontSize: 18,
 
     // font family with optional fallbacks
     fontFamily: '"Fira Code Retina", Menlo, "Source Code Pro", "Roboto Mono", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -33,7 +33,7 @@ module.exports = {
     cursorAccentColor: '#000',
 
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorShape: 'BEAM',
+    cursorShape: 'BLOCK',
 
     // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: true,
