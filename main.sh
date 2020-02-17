@@ -102,7 +102,7 @@ fi
 
 # Yarn global binaries.
 if [ -d "$HOME/.config/yarn/global" ] ; then
-    export PATH="${PATH}:`yarn global bin`"
+    export PATH="${PATH}:`yarn global bin 2> /dev/null`"
 fi
 
 # Aliases.

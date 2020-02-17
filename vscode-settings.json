@@ -1,95 +1,174 @@
 {
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "window.zoomLevel": 0,
-    "window.menuBarVisibility": "toggle",
-    "explorer.openEditors.visible": 0,
-    "editor.fontFamily": "'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', 'monospace', monospace",
-    "editor.minimap.enabled": false,
-    "editor.wordWrapColumn": 120,
-    "python.jediEnabled": false,
-    "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
-    "eslint.alwaysShowStatus": true,
-    "eslint.format.enable": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "[markdown|mdx]": {
-        "editor.wordWrap": "wordWrapColumn",
-        "editor.wordWrapColumn": 80,
-        "editor.wrappingIndent": "same",
-        "editor.quickSuggestions": false,
-        "editor.rulers": [
-            80
-        ],
-    },
-    "[javascript|javascriptreact]": {
-        "editor.wordWrap": "wordWrapColumn",
-        "editor.wordWrapColumn": 100,
-        "editor.wrappingIndent": "same",
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-        "editor.quickSuggestions": false,
-        "editor.rulers": [
-            100
-        ],
-    },
-    "editor.fontSize": 12,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "window.zoomLevel": 0,
+  "window.menuBarVisibility": "toggle",
+  "explorer.openEditors.visible": 0,
+  "editor.fontFamily": "'Fira Code Retina', 'Cascadia Code Regular', 'Source Code Pro', 'Roboto Mono', 'monospace', monospace",
+  "editor.minimap.enabled": false,
+  "python.jediEnabled": false,
+  "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "editor.parameterHints.enabled": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "html.suggest.html5": false,
+  "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
-    "workbench.activityBar.visible": false,
-    "terminal.integrated.fontSize": 12,
-    "gitlens.defaultDateStyle": "absolute",
-    "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:MM",
-    "vim.easymotion": true,
-    "vim.sneak": true,
-    "vim.surround": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "f"],
-        "after": ["<esc>"]
-      },
-      {
-        "before": ["f", "j"],
-        "after": ["<esc>"]
-      }
+    "editor.wordWrapColumn": 80,
+    "editor.wrappingIndent": "same",
+    "editor.rulers": [
+      80
     ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-      {
-        "before": ["g", "j"],
-        "commands": ["workbench.action.previousEditorInGroup"]
-      },
-      {
-        "before": ["g", "k"],
-        "commands": ["workbench.action.nextEditorInGroup"]
-      },
-      {
-        "before": ["<c-l>"],
-        "after": ["<c-w>", "<c-w>"]
-      },
-      {
-        "before": ["<c-h>"],
-        "after": ["<c-w>", "<c-w>"]
-      },
-      {
-        "before": ["<leader>", "d"],
-        "after": ["d", "d"]
-      },
-      {
-        "before": ["<C-n>"],
-        "commands": [":nohl"]
-      }
+  },
+  "[mdx]": {
+    "editor.rulers": [
+      80
     ],
-    "vim.leader": ",",
-    "vim.handleKeys": {
-      "<C-a>": false,
-      "<C-f>": false
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [
+      100
+    ],
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [
+      100
+    ],
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [
+      100
+    ],
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [
+      100
+    ],
+  },
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "workbench.activityBar.visible": false,
+  "terminal.integrated.fontSize": 12,
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:MM",
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.surround": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "f"
+      ],
+      "after": [
+        "<esc>"
+      ]
     },
-    "editor.foldingStrategy": "indentation",
-    "scm.diffDecorationsGutterWidth": 2,
-    "problems.showCurrentInStatus": true
-  
+    {
+      "before": [
+        "f",
+        "j"
+      ],
+      "after": [
+        "<esc>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "g",
+        "j"
+      ],
+      "commands": [
+        "workbench.action.previousEditorInGroup"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.nextEditorInGroup"
+      ]
+    },
+    {
+      "before": [
+        "<c-l>"
+      ],
+      "after": [
+        "<c-w>",
+        "<c-w>"
+      ]
+    },
+    {
+      "before": [
+        "<c-h>"
+      ],
+      "after": [
+        "<c-w>",
+        "<c-w>"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "d",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    }
+  ],
+  "vim.leader": ",",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "editor.foldingStrategy": "indentation",
+  "scm.diffDecorationsGutterWidth": 2,
+  "problems.showCurrentInStatus": true,
+  "search.enableSearchEditorPreview": true,
+  "editor.semanticHighlighting.enabled": true,
+  "workbench.view.experimental.allowMovingToNewContainer": true,
+  "editor.fontSize": 12,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.panel.defaultLocation": "right",
+  "workbench.colorTheme": "One Dark Pro"
 }
