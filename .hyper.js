@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 18,
+    fontSize: 13,
 
     // font family with optional fallbacks
     fontFamily: '"Fira Code Retina", Menlo, "Source Code Pro", "Roboto Mono", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
