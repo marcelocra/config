@@ -9,7 +9,6 @@
 set -e
 
 code --install-extension arcticicestudio.nord-visual-studio-code
-code --install-extension auchenberg.vscode-browser-preview
 code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
