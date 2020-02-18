@@ -8,15 +8,18 @@
 
 set -e
 
+code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension auchenberg.vscode-browser-preview
 code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
+code --install-extension esbenp.prettier-vscode
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension ms-python.python
 code --install-extension ms-vscode.Go
 code --install-extension ms-vscode.sublime-keybindings
 code --install-extension vscodevim.vim
+code --install-extension zhuangtongfa.material-theme
 
 set +e
