@@ -71,6 +71,17 @@ tmx() {
     return 1
 }
 
+run() {
+    if [ -f './package-lock.json' ]; then
+        npm run $1
+        return
+    fi
+    if [ -f './yarn.lock' ]; then
+        yarn $1
+        return
+    fi
+}
+
 # Exports.
 # --------
 # Add a number of paths to PATH.
