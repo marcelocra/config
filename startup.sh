@@ -1,7 +1,16 @@
 #!/usr/bin/env sh
 #
-# Commands to be run during startup. To set them up use crontab -e and add the
-# following: @reboot /path/to/this/file.sh
+# Commands to be run during startup. Need to figure a way to run them
+# automatically.
+
+# Configure hardware.
+# ----------------------------------------------------------------------------
+[ -z "$MCRA_HARDWARE_CONFIGURED" ] \
+  || { echo "Hardware already configured! Skipping."; return 0; }
+
+# Run all commands defined above. They need xinput, so check that first.
+command -v xinput >/dev/null 2>&1 \
+  || { echo >&2 "I require xinput but it's not installed.  Aborting."; return 1; }
 
 # Configure expert mouse, if available.
 setup_expert_mouse() {
@@ -48,10 +57,10 @@ reduce_speed_of_logitech_mouse() {
     xinput set-prop $device_id $prop_id -0.75  # I found this value to be good.
 }
 
-# Run all commands defined above. They need xinput, so check that first.
-CHECK_COMMAND=xinput command -v $CHECK_COMMAND >/dev/null 2>&1 \
-  || { echo >&2 "I require $CHECK_COMMAND but it's not installed.  Aborting."; exit 1; }
 
 setup_expert_mouse
 setup_evoluent_mouse
 reduce_speed_of_logitech_mouse
+
+export MCRA_HARDWARE_CONFIGURED=true
+# ----------------------------------------------------------------------------

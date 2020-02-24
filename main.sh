@@ -94,5 +94,7 @@ alias sbash="source ${HOME}/.bashrc"
 # Other scripts.
 # --------------
 
+source $HOME/projects/dotfiles/startup.sh
+
 # Install fzf.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
