@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+#
+# Other stuff to install:
+# vim-plug
+
+arch_linux_install() {
+    sudo pacman -S neovim python-pynvim xorg-xinput xsel
+    sudo snap install code --classic
+}
 
 essential_stuff() {
     local tmp=$(mktemp)
