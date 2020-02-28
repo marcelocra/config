@@ -14,6 +14,7 @@ essential_stuff() {
         gnupg2
         python3-dev
         python3-pip
+        cmake
         software-properties-common
         tmux
         tree
