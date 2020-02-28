@@ -5,8 +5,9 @@
 ! Note: increasing the size might cause the underline char to be
 ! invisible.
 xterm*renderFont: true
-xterm*faceName: Monospace
-xterm*faceSize: 12
+xterm*faceName: Fira Code
+xterm*faceSize: 14
+!xterm*letterSpace: -1
 
 ! Copy all selection to the system clipboard.
 xterm*selectToClipboard: true

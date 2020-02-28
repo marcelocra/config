@@ -10,6 +10,7 @@
     s = status
     st = status
     ds = diff --stat  # Summary of current diff.
+    ps = push --set-upstream
 
     # The 'f' in the beginning stands for 'full'. So 'fd' -> 'full diff',
     # piping it through less (with colors!).
