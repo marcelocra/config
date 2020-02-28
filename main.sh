@@ -75,7 +75,8 @@ fi
 
 alias tmux="TERM=xterm-256color tmux"
 
-alias vi="vim.tiny -u NONE"
+alias vi=nvim
+alias vim=vi
 
 alias inst="sudo apt install"
 alias purge="sudo apt purge"
