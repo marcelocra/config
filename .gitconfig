@@ -28,6 +28,7 @@
 [core]
     autocrlf = false
     editor = vim
+  pager = less -F -X
 
 [includeIf "gitdir:~/projects/kuadro/"]
     path = ~/projects/kuadro/.gitconfig
