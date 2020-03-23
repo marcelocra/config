@@ -93,7 +93,6 @@
   "window.menuBarVisibility": "toggle",
   "explorer.openEditors.visible": 0,
   "editor.fontFamily": "'Fira Code Retina', 'Cascadia Code Regular', 'Source Code Pro', 'Roboto Mono', 'monospace', monospace",
-  "editor.minimap.enabled": false,
   "python.jediEnabled": false,
   "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
   "eslint.alwaysShowStatus": true,

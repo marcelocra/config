@@ -77,5 +77,18 @@
         "key": "ctrl+k ctrl+e",
         "command": "-keybindings.editor.defineWhenExpression",
         "when": "inKeybindings && keybindingFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+m",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+k ctrl+m",
+        "command": "-workbench.extensions.action.showRecommendedKeymapExtensions"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.debug.restart",
+        "when": "inDebugMode"
     }
 ]
