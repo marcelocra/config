@@ -53,6 +53,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/tools/flutter" ] ; then
+    export PATH="$PATH:$HOME/tools/flutter/bin"
+fi
+
 export EDITOR=nvim
 
 # Node stuff.

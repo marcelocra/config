@@ -10,6 +10,7 @@ set -e
 
 code --install-extension arcticicestudio.nord-visual-studio-code
 code --install-extension CoenraadS.bracket-pair-colorizer-2
+code --install-extension Dart-Code.flutter
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
 code --install-extension esbenp.prettier-vscode
