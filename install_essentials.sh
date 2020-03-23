@@ -27,6 +27,8 @@ essential_stuff() {
         tmux
         tree
         xsel
+        baobab
+        ncdu
         # fonts
         fonts-croscore
         fonts-crosextra-caladea
