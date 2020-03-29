@@ -48,10 +48,7 @@ setup_exports() {
         "$HOME/tools/flutter/bin"
     )
 
-    echo $curr_paths
-
     for curr_path in ${curr_paths[@]}; do
-      echo ${curr_path}
         if [[ ! "$PATH" == *${curr_path}* ]] ; then
             if [ -d "$curr_path" ] ; then
                 export PATH="${PATH}:${curr_path}"
