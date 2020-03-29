@@ -59,30 +59,27 @@ setup_exports() {
         fi
     done
 
-    if [ -z "${ANDROID_SDK_ROOT}" ] ; then
-        export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
+    export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
+    export EDITOR=nvim
+
+
+    # Node stuff.
+    #
+    # NVM should be loaded first, as other exports and commands will need a
+    # valid Node installation.
+    if [ -d "$HOME/.nvm" ]; then
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
     fi
 
-    export EDITOR=nvim
+    # Yarn global binaries.
+    if [ -d "$HOME/.config/yarn/global" ] ; then
+        export PATH="${PATH}:`yarn global bin 2> /dev/null`"
+    fi
 }
 
 setup_exports
-
-
-# Node stuff.
-#
-# NVM should be loaded first, as other exports and commands will need a
-# valid Node installation.
-if [ -d "$HOME/.nvm" ]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-fi
-
-# Yarn global binaries.
-if [ -d "$HOME/.config/yarn/global" ] ; then
-    export PATH="${PATH}:`yarn global bin 2> /dev/null`"
-fi
 
 # Aliases.
 # --------
