@@ -1,25 +1,39 @@
 #!/usr/bin/env bash
-# Run the following command to save the list of extensions from one machine.
-#   Unix:
-#       code --list-extensions | xargs -L 1 echo code --install-extension
-#   Windows:
-#       code --list-extensions | % { "code --install-extension $_" }
-# Then put it here.
+# Saves or installs all extensions for code and code-insiders. Assumes that
+# both are installed.
+# 
+# In Windows it should be the following:
+#   code --list-extensions | % { "code --install-extension $_" }
 
 set -e
 
-code --install-extension arcticicestudio.nord-visual-studio-code
-code --install-extension CoenraadS.bracket-pair-colorizer-2
-code --install-extension Dart-Code.flutter
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension eamodio.gitlens
-code --install-extension esbenp.prettier-vscode
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension msjsdiag.debugger-for-chrome
-code --install-extension ms-python.python
-code --install-extension ms-vscode.Go
-code --install-extension ms-vscode.sublime-keybindings
-code --install-extension vscodevim.vim
-code --install-extension zhuangtongfa.material-theme
+[ -z $1 ] && exit 1
+
+EXTENSIONS_FILE="vscode-extensions.txt"
+
+if [[ $1 == *save* ]]; then
+  EXTENSIONS_LIST=$(mktemp)
+  code --list-extensions | xargs -L 1 echo > $EXTENSIONS_LIST
+  code-insiders --list-extensions | xargs -L 1 echo >> $EXTENSIONS_LIST # Note that this is an append.
+  cat $EXTENSIONS_LIST | sort | uniq | tee $EXTENSIONS_FILE
+fi
+
+if [[ $1 == *inst* ]]; then
+  if [ ! -f $EXTENSIONS_FILE ]; then
+    echo "You don't have an extensions file"
+    exit 1
+  fi
+
+  echo '--------------------------------'
+  echo '| Installing Code extensions...|'
+  echo '--------------------------------'
+  cat $EXTENSIONS_FILE | xargs -L 1 code --install-extension
+  echo '... done!'
+  echo '-----------------------------------------'
+  echo '| Installing Code Insiders extensions...|'
+  echo '-----------------------------------------'
+  cat $EXTENSIONS_FILE | xargs -L 1 code-insiders --install-extension
+  echo '... done!'
+fi
 
 set +e
