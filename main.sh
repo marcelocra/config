@@ -55,6 +55,7 @@ fi
 
 if [ -d "$HOME/tools/flutter" ] ; then
     export PATH="$PATH:$HOME/tools/flutter/bin"
+    export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
 fi
 
 export EDITOR=nvim
