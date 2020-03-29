@@ -29,6 +29,7 @@ essential_stuff() {
         xsel
         baobab
         ncdu
+        ffmpeg
         # fonts
         fonts-croscore
         fonts-crosextra-caladea
