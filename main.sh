@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Settings.
 # ---------
@@ -39,35 +39,26 @@ run() {
 # Add a number of paths to PATH.
 
 # Snapcraft.
-setup_exports() {
-    local curr_paths
-    curr_paths=(
-        "/snap/bin"
-        "$HOME/bin"
-        "$HOME/.local/bin"
-        "$HOME/tools/flutter/bin"
-    )
+if [ -d "/snap/bin" ] ; then
+    export PATH="${PATH}:/snap/bin"
+fi
 
-    echo $curr_paths
+# My binaries.
+if [ -d "$HOME/bin" ] ; then
+    export PATH="${PATH}:${HOME}/bin"
+fi
 
-    for curr_path in ${curr_paths[@]}; do
-      echo ${curr_path}
-        if [ ! "$PATH" == *${curr_path}* ] ; then
-            if [ -d "$curr_path" ] ; then
-                export PATH="${PATH}:${curr_path}"
-            fi
-        fi
-    done
+# Private binaries (and also pip3 package dir).
+if [ -d "$HOME/.local/bin" ] ; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
 
-    if [ -z "${ANDROID_SDK_ROOT}" ] ; then
-        export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
-    fi
+if [ -d "$HOME/tools/flutter" ] ; then
+    export PATH="$PATH:$HOME/tools/flutter/bin"
+    export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
+fi
 
-    export EDITOR=nvim
-}
-
-setup_exports
-
+export EDITOR=nvim
 
 # Node stuff.
 #
