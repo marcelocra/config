@@ -46,6 +46,7 @@ setup_exports() {
         "$HOME/bin"
         "$HOME/.local/bin"
         "$HOME/tools/flutter/bin"
+        "/home/linuxbrew/.linuxbrew/bin"
     )
 
     for curr_path in ${curr_paths[@]}; do

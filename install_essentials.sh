@@ -5,7 +5,13 @@
 
 arch_linux_install() {
     sudo pacman -S neovim python-pynvim xorg-xinput xsel
+}
+
+other_installs() {
     sudo snap install code --classic
+    sudo snap install insomnia
+    sudo snap install telegram-desktop
+    # Homebrew for linux: https://docs.brew.sh/Homebrew-on-Linux
 }
 
 essential_stuff() {
@@ -30,6 +36,8 @@ essential_stuff() {
         baobab
         ncdu
         ffmpeg
+        file
+        silversearcher-ag
         # fonts
         fonts-croscore
         fonts-crosextra-caladea
