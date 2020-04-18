@@ -38,6 +38,7 @@ essential_stuff() {
         ffmpeg
         file
         silversearcher-ag
+        libpq-dev  # for postgres, particularly in python
         # fonts
         fonts-croscore
         fonts-crosextra-caladea
@@ -63,9 +64,15 @@ essential_stuff() {
     echo 'Installing Python packages...' | tee -a $tmp
     local python_pkgs
     python_pkgs=(
+        # These first two should be first.
         setuptools
         wheel
-        ipython  # should be last
+        ipython
+        sqlalchemy
+        psycopg2
+        pandas
+        jupyterlab
+        ipython-sql  # for sql magics in jupyter
     )
 
     for i in ${python_pkgs[@]}; do
