@@ -34,6 +34,19 @@ run() {
     fi
 }
 
+move_to_trash() {
+  local trash_dir
+  trash_dir="${HOME}/.trash"
+
+  if [ ! -d "${trash_dir}" ]; then
+    echo "Trash directory doesn't exist. Creating..."
+    mkdir "${trash_dir}"
+    echo "Created!"
+  fi
+
+  mv "$@" ${trash_dir}
+}
+
 # Exports.
 # --------
 # Add a number of paths to PATH.
@@ -59,6 +72,7 @@ setup_exports() {
 
     export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
     export EDITOR=nvim
+    export PIPENV_VENV_IN_PROJECT=1
 
 
     # Node stuff.
@@ -95,11 +109,14 @@ alias eg=egrep
 alias pip=pip3
 alias python=python3
 
-alias l="ls -lFh"
-alias ll="ls -lFha"
+alias l="ls -lFh --block-size=MB"
+alias ll="l -a"
 
 alias szsh="source ${HOME}/.zshrc"
 alias sbash="source ${HOME}/.bashrc"
+
+alias really-rm="/bin/rm"
+alias rm="move_to_trash"
 
 # Other scripts.
 # --------------
