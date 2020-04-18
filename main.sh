@@ -44,7 +44,13 @@ move_to_trash() {
     echo "Created!"
   fi
 
-  mv "$@" ${trash_dir}
+  local new_dir_name
+  new_dir_name="${trash_dir}/$(date +%Y-%m-%d_%H-%M-%S)/"
+  mkdir "${new_dir_name}"
+
+  echo "Moving to: ${new_dir_name}"
+  mv "$@" ${new_dir_name}
+  echo 'Done!'
 }
 
 # Exports.
