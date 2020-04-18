@@ -6,7 +6,7 @@
   # Diff stuff.
   dw = diff --word-diff --color-words
   dwm = diff --word-diff --color-words master
-  d = dw HEAD
+  d = diff --word-diff --color-words HEAD
   ds = diff --stat  # Summary of current diff.
 
   # Other stuff.
