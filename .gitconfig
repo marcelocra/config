@@ -33,10 +33,13 @@
   dagd = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(magenta)%aD%C(reset) %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(cyan)%d%C(reset)' --all
 
 [core]
-  autocrlf = false
+  autocrlf = true
   editor = vim
   pager = less -F -X
 
 [includeIf "gitdir:~/projects/kuadro/"]
   path = ~/projects/kuadro/.gitconfig
 
+[includeIf "gitdir:C:/Users/marce/projects/kuadro/"]
+  path = "C:/Users/marce/projects/kuadro/.gitconfig"
+  editor = "\"C:/Users/marce/AppData/Local/Programs/Microsoft VS Code Insiders/Code - Insiders.exe\" --wait"
