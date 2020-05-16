@@ -65,6 +65,7 @@ setup_exports() {
         "$HOME/bin"
         "$HOME/.local/bin"
         "$HOME/tools/flutter/bin"
+        "/usr/local/go/bin"
         "/home/linuxbrew/.linuxbrew/bin"
     )
 
