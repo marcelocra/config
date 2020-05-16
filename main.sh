@@ -59,14 +59,20 @@ move_to_trash() {
 
 # Snapcraft.
 setup_exports() {
+    export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
+    export EDITOR=nvim
+    export PIPENV_VENV_IN_PROJECT=1
+    export DENO_INSTALL="${HOME}/.deno"
+
     local curr_paths
     curr_paths=(
         "/snap/bin"
         "$HOME/bin"
         "$HOME/.local/bin"
         "$HOME/tools/flutter/bin"
-        "/usr/local/go/bin"
         "/home/linuxbrew/.linuxbrew/bin"
+        "/usr/local/go/bin"
+        "${DENO_INSTALL}/bin"
     )
 
     for curr_path in ${curr_paths[@]}; do
@@ -77,13 +83,10 @@ setup_exports() {
         fi
     done
 
-    export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
-    export EDITOR=nvim
-    export PIPENV_VENV_IN_PROJECT=1
-
-
+    # ------------------------------------------------------------------------
     # Node stuff.
-    #
+    # ------------------------------------------------------------------------
+
     # NVM should be loaded first, as other exports and commands will need a
     # valid Node installation.
     if [ -d "$HOME/.nvm" ]; then
