@@ -92,9 +92,10 @@
   "window.zoomLevel": 0,
   "window.menuBarVisibility": "toggle",
   "explorer.openEditors.visible": 0,
-  "editor.fontFamily": "Consolas, 'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', monospace",
+  "editor.fontFamily": "'JetBrains Mono', Consolas, 'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', monospace",
   "editor.fontSize": 12,
-  "terminal.integrated.fontFamily": "'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', monospace",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "'Roboto Mono', 'Fira Code Retina', 'Source Code Pro', monospace",
   "terminal.integrated.fontSize": 12,
   "python.jediEnabled": false,
   "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
@@ -173,6 +174,7 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "One Dark Pro",
-  "editor.minimap.enabled": false
+  "workbench.colorTheme": "Monokai",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2
 }

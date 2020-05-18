@@ -58,12 +58,12 @@
     },
     {
         "key": "ctrl+k ctrl+x",
-        "command": "-editor.action.trimTrailingWhitespace",
-        "when": "editorTextFocus && !editorReadonly"
+        "command": "workbench.view.extensions"
     },
     {
-        "key": "ctrl+shift+x",
-        "command": "extensions.listView.focus"
+        "key": "ctrl+k ctrl+x",
+        "command": "-editor.action.trimTrailingWhitespace",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "ctrl+k ctrl+e",
@@ -114,5 +114,10 @@
     {
         "key": "ctrl+j",
         "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
