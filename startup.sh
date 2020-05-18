@@ -8,9 +8,22 @@
 [ -z "$MCRA_HARDWARE_CONFIGURED" ] \
   || { echo "Hardware already configured! Skipping."; return 0; }
 
-# Run all commands defined above. They need xinput, so check that first.
-command -v xinput >/dev/null 2>&1 \
-  || { echo >&2 "I require xinput but it's not installed.  Aborting."; return 1; }
+# Commands need xinput, so check that first.
+if [ -f "${HOME}/.no-xinput-found" ]; then
+  return 1
+fi
+
+if ! [ command -v xinput >/dev/null 2>&1 ]; then
+  local no_xinput
+  no_xinput="${HOME}/.no-xinput-found"
+
+  echo >&2 "I require xinput but it's not installed.  Aborting."
+  echo >&2 "I will create ${no_xinput} and won't try again. If you"
+  echo >&2 "want this to run again, delete that file."
+  touch "${no_xinput}" && echo >&2 "Created!" || echo >&2 "Failed :("
+  return 1
+fi
+
 
 # Configure expert mouse, if available.
 setup_expert_mouse() {

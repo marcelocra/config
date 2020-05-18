@@ -34,12 +34,36 @@ run() {
     fi
 }
 
+move_to_trash() {
+  local trash_dir
+  trash_dir="${HOME}/.trash"
+
+  if [ ! -d "${trash_dir}" ]; then
+    echo "Trash directory doesn't exist. Creating..."
+    mkdir "${trash_dir}"
+    echo "Created!"
+  fi
+
+  local new_dir_name
+  new_dir_name="${trash_dir}/$(date +%Y-%m-%d_%H-%M-%S)/"
+  mkdir "${new_dir_name}"
+
+  echo "Moving to: ${new_dir_name}"
+  mv "$@" ${new_dir_name}
+  echo 'Done!'
+}
+
 # Exports.
 # --------
 # Add a number of paths to PATH.
 
 # Snapcraft.
 setup_exports() {
+    export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
+    export EDITOR=nvim
+    export PIPENV_VENV_IN_PROJECT=1
+    export DENO_INSTALL="${HOME}/.deno"
+
     local curr_paths
     curr_paths=(
         "/snap/bin"
@@ -47,6 +71,8 @@ setup_exports() {
         "$HOME/.local/bin"
         "$HOME/tools/flutter/bin"
         "/home/linuxbrew/.linuxbrew/bin"
+        "/usr/local/go/bin"
+        "${DENO_INSTALL}/bin"
     )
 
     for curr_path in ${curr_paths[@]}; do
@@ -57,12 +83,10 @@ setup_exports() {
         fi
     done
 
-    export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
-    export EDITOR=nvim
-
-
+    # ------------------------------------------------------------------------
     # Node stuff.
-    #
+    # ------------------------------------------------------------------------
+
     # NVM should be loaded first, as other exports and commands will need a
     # valid Node installation.
     if [ -d "$HOME/.nvm" ]; then
@@ -95,11 +119,16 @@ alias eg=egrep
 alias pip=pip3
 alias python=python3
 
-alias l="ls -lFh"
-alias ll="ls -lFha"
+alias l="ls -lFh --block-size=MB"
+alias ll="l -a"
 
 alias szsh="source ${HOME}/.zshrc"
 alias sbash="source ${HOME}/.bashrc"
+
+alias really-rm="/bin/rm"
+alias rm="move_to_trash"
+
+alias code="code-insiders"
 
 # Other scripts.
 # --------------
