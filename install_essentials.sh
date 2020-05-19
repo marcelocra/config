@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #
-# Other stuff to install:
-# vim-plug
+# Full provisioning for new systems.
 
 arch_linux_install() {
     sudo pacman -S neovim python-pynvim xorg-xinput xsel
