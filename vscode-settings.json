@@ -8,94 +8,54 @@
   "vim.hlsearch": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "f"
-      ],
-      "after": [
-        "<esc>"
-      ]
+      "before": ["j", "f"],
+      "after": ["<esc>"]
     },
     {
-      "before": [
-        "f",
-        "j"
-      ],
-      "after": [
-        "<esc>"
-      ]
+      "before": ["f", "j"],
+      "after": ["<esc>"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "g",
-        "j"
-      ],
-      "commands": [
-        "workbench.action.previousEditorInGroup"
-      ]
+      "before": ["g", "j"],
+      "commands": ["workbench.action.previousEditorInGroup"]
     },
     {
-      "before": [
-        "g",
-        "k"
-      ],
-      "commands": [
-        "workbench.action.nextEditorInGroup"
-      ]
+      "before": ["g", "k"],
+      "commands": ["workbench.action.nextEditorInGroup"]
     },
     {
-      "before": [
-        "<c-l>"
-      ],
-      "after": [
-        "<c-w>",
-        "<c-w>"
-      ]
+      "before": ["<c-l>"],
+      "after": ["<c-w>", "<c-w>"]
     },
     {
-      "before": [
-        "<c-h>"
-      ],
-      "after": [
-        "<c-w>",
-        "<c-w>"
-      ]
+      "before": ["<c-h>"],
+      "after": ["<c-w>", "<c-w>"]
     },
     {
-      "before": [
-        "<leader>",
-        "d"
-      ],
-      "after": [
-        "d",
-        "d"
-      ]
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
     },
     {
-      "before": [
-        "<C-n>"
-      ],
-      "commands": [
-        ":nohl"
-      ]
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
     }
   ],
-  "vim.leader": ",",
+  "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
   },
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "window.zoomLevel": 3,
+  "window.zoomLevel": 0,
   "window.menuBarVisibility": "toggle",
   "explorer.openEditors.visible": 0,
-  "editor.fontFamily": "'JetBrains Mono', Consolas, 'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', monospace",
+  "editor.fontFamily": "Consolas, 'JetBrains Mono', 'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', monospace",
   "editor.fontSize": 12,
   "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "'Roboto Mono', 'Fira Code Retina', 'Source Code Pro', monospace",
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Roboto Mono', 'Fira Code Retina', 'Source Code Pro', monospace",
   "terminal.integrated.fontSize": 12,
   "python.jediEnabled": false,
   "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
@@ -116,42 +76,30 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
     "editor.wrappingIndent": "same",
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80]
   },
   "[mdx]": {
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80]
   },
   "[javascript]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100]
   },
   "[javascriptreact]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100]
   },
   "[typescript]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100]
   },
   "[typescriptreact]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100]
   },
   "eslint.validate": [
     "javascript",
@@ -177,5 +125,6 @@
   "workbench.colorTheme": "Monokai",
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
-  "go.formatTool": "goimports"
+  "go.formatTool": "goimports",
+  "dart.openDevTools": "flutter"
 }
