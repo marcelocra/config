@@ -108,9 +108,6 @@ setup_exports
 
 alias tmux="TERM=xterm-256color tmux"
 
-alias vi=nvim
-alias vim=vi
-
 alias inst="sudo apt install"
 alias purge="sudo apt purge"
 
