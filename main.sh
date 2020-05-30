@@ -133,7 +133,7 @@ alias sbash="source ${HOME}/.bashrc"
 alias really-rm="/bin/rm"
 alias rm="move_to_trash"
 
-alias code="code-insiders"
+alias codi="code-insiders"
 
 # Other scripts.
 # --------------
