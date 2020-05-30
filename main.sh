@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# Load (or create) local system settings.
+if [ ! -f $HOME/.mcra_settings ]; then
+  echo 'Creating local settings file...'
+  touch $HOME/.mcra_settings
+  echo "Created! Change ${HOME}/.mcra_settings for local stuff."
+fi
+source $HOME/.mcra_settings
+
 # Settings.
 # ---------
 
@@ -60,7 +68,7 @@ move_to_trash() {
 # Snapcraft.
 setup_exports() {
     export ANDROID_SDK_ROOT="$HOME/tools/Android/Sdk"
-    export EDITOR=nvim
+    export EDITOR=vim
     export PIPENV_VENV_IN_PROJECT=1
     export DENO_INSTALL="${HOME}/.deno"
 

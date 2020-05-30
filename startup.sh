@@ -13,7 +13,7 @@ if [ -f "${HOME}/.no-xinput-found" ]; then
   return 1
 fi
 
-if ! [ command -v xinput >/dev/null 2>&1 ]; then
+if ! command -v xinput >/dev/null 2>&1; then
   local no_xinput
   no_xinput="${HOME}/.no-xinput-found"
 
