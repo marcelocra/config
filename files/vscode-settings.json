@@ -49,7 +49,7 @@
   },
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 2,
   "window.menuBarVisibility": "toggle",
   "explorer.openEditors.visible": 0,
   "editor.fontFamily": "Consolas, 'JetBrains Mono', 'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', monospace",

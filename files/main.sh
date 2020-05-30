@@ -138,7 +138,7 @@ alias codi="code-insiders"
 # Other scripts.
 # --------------
 
-source $HOME/projects/dotfiles/startup.sh
+source $HOME/projects/dotfiles/files/startup.sh
 
 # Install fzf.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
