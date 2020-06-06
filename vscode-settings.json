@@ -3,7 +3,7 @@
   "vim.sneak": true,
   "vim.surround": true,
   "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": false,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.insertModeKeyBindings": [
@@ -17,6 +17,14 @@
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["]", "<space>"],
+      "after": ["o", "<esc>", "k"]
+    },
+    {
+      "before": ["[", "<space>"],
+      "after": ["O", "<esc>", "j"]
+    },
     {
       "before": ["g", "j"],
       "commands": ["workbench.action.previousEditorInGroup"]
@@ -49,7 +57,7 @@
   },
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 3,
   "window.menuBarVisibility": "toggle",
   "explorer.openEditors.visible": 0,
   "editor.fontFamily": "Consolas, 'JetBrains Mono', 'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', monospace",
@@ -122,9 +130,9 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Monokai",
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "go.formatTool": "goimports",
-  "dart.openDevTools": "flutter"
+  "dart.openDevTools": "flutter",
+  "workbench.colorTheme": "Monokai"
 }
