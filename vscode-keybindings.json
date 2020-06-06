@@ -109,7 +109,13 @@
   },
   {
     "key": "ctrl+t",
-    "command": "workbench.action.togglePanel"
+    "command": "workbench.action.togglePanel",
+    "when": "activePanel"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "!activePanel"
   },
   {
     "key": "ctrl+j",
