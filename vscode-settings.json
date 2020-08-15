@@ -59,12 +59,14 @@
   "telemetry.enableTelemetry": false,
   "window.zoomLevel": 0,
   "window.menuBarVisibility": "toggle",
-  "explorer.openEditors.visible": 0,
-  "editor.fontFamily": "Consolas, 'JetBrains Mono', 'Fira Code Retina', 'Source Code Pro', 'Roboto Mono', monospace",
-  "editor.fontSize": 12,
-  "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Roboto Mono', 'Fira Code Retina', 'Source Code Pro', monospace",
-  "terminal.integrated.fontSize": 12,
+  // "explorer.openEditors.visible": 0,
+  "editor.fontFamily": "'Fantasque Sans Mono', 'JetBrains Mono', Consolas, 'Fira Code Retina'",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 22,
+  "editor.letterSpacing": 0.7,
+  "editor.fontWeight": "100",
+  "terminal.integrated.fontFamily": "'Iosevka SS04', 'Fira Code Retina'",
+  "terminal.integrated.fontSize": 17,
   "terminal.integrated.allowChords": false,
   "python.jediEnabled": false,
   "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
@@ -85,6 +87,7 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
     "editor.wrappingIndent": "same",
+    "editor.tabSize": 4,
     "editor.rulers": [80]
   },
   "[mdx]": {
@@ -135,5 +138,17 @@
   "editor.tabSize": 2,
   "go.formatTool": "goimports",
   "dart.openDevTools": "flutter",
-  "workbench.colorTheme": "Monokai"
+  "workbench.colorTheme": "One Dark Pro",
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "workbench.startupEditor": "newUntitledFile",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  }
 }

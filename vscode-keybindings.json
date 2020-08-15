@@ -120,5 +120,33 @@
   {
     "key": "ctrl+j",
     "command": "-workbench.action.togglePanel"
+  },
+  // {
+  //   "key": "ctrl+c",
+  //   "command": "workbench.action.terminal.copySelection",
+  //   "when": "terminalFocus"
+  // },
+  // {
+  //   "key": "ctrl+v",
+  //   "command": "workbench.action.terminal.paste",
+  //   "when": "terminalFocus"
+  // },
+  // {
+  //   "key": "ctrl+shift+c",
+  //   "command": "workbench.action.terminal.sendSequence",
+  //   "args": {
+  //     "text": "\u0003"
+  //   },
+  //   "when": "terminalFocus"
+  // },
+  {
+    "key": "ctrl+backspace",
+    "command": "-paredit.killListBackward",
+    "when": "editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "calva.evaluateSelection",
+    "when": "calva:connected && editorTextFocus && editorLangId == clojure"
   }
 ]
