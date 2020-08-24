@@ -1,4 +1,117 @@
 {
+  "editor.fontFamily": "'JetBrains Mono', 'Fantasque Sans Mono', Consolas, 'Fira Code Retina'",
+  "editor.fontSize": 15,
+  // "editor.lineHeight": 22,
+  // "editor.letterSpacing": 0.7,
+  // "editor.fontWeight": "100",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "editor.parameterHints.enabled": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "editor.foldingStrategy": "indentation",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // "explorer.openEditors.visible": 0,
+
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:MM",
+
+  "problems.showCurrentInStatus": true,
+  "scm.diffDecorationsGutterWidth": 2,
+
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Iosevka SS04 Extended', 'Fira Code Retina'",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+
+  "window.zoomLevel": 1,
+  "window.menuBarVisibility": "toggle",
+  "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
+
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "vscode-icons",
+
+  // -- Language specific settings ------------------------------------
+
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [100]
+  },
+
+  "[javascriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [100]
+  },
+
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [100]
+  },
+
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.rulers": [100]
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "html.suggest.html5": false,
+
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.wrappingIndent": "same",
+    "editor.tabSize": 4,
+    "editor.rulers": [80]
+  },
+
+  "python.jediEnabled": false,
+  "go.formatTool": "goimports",
+  "dart.openDevTools": "flutter",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+
+  // -- Vim Mode ------------------------------------------------------
+
   "vim.easymotion": true,
   "vim.sneak": true,
   "vim.surround": true,
@@ -54,101 +167,5 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
-  },
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
-  "window.zoomLevel": 0,
-  "window.menuBarVisibility": "toggle",
-  // "explorer.openEditors.visible": 0,
-  "editor.fontFamily": "'Fantasque Sans Mono', 'JetBrains Mono', Consolas, 'Fira Code Retina'",
-  "editor.fontSize": 15,
-  "editor.lineHeight": 22,
-  "editor.letterSpacing": 0.7,
-  "editor.fontWeight": "100",
-  "terminal.integrated.fontFamily": "'Iosevka SS04', 'Fira Code Retina'",
-  "terminal.integrated.fontSize": 17,
-  "terminal.integrated.allowChords": false,
-  "python.jediEnabled": false,
-  "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
-  "eslint.alwaysShowStatus": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": false
-  },
-  "editor.parameterHints.enabled": false,
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "html.suggest.html5": false,
-  "[markdown]": {
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
-    "editor.wrappingIndent": "same",
-    "editor.tabSize": 4,
-    "editor.rulers": [80]
-  },
-  "[mdx]": {
-    "editor.rulers": [80]
-  },
-  "[javascript]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [100]
-  },
-  "[javascriptreact]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [100]
-  },
-  "[typescript]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [100]
-  },
-  "[typescriptreact]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [100]
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "editor.formatOnSave": true,
-  "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 120,
-  "workbench.activityBar.visible": false,
-  "gitlens.defaultDateStyle": "absolute",
-  "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:MM",
-  "editor.foldingStrategy": "indentation",
-  "scm.diffDecorationsGutterWidth": 2,
-  "problems.showCurrentInStatus": true,
-  "search.enableSearchEditorPreview": true,
-  "editor.semanticHighlighting.enabled": true,
-  "workbench.view.experimental.allowMovingToNewContainer": true,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.minimap.enabled": false,
-  "editor.tabSize": 2,
-  "go.formatTool": "goimports",
-  "dart.openDevTools": "flutter",
-  "workbench.colorTheme": "One Dark Pro",
-  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-  "workbench.startupEditor": "newUntitledFile",
-  "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
   }
 }
