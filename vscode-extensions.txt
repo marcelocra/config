@@ -14,3 +14,4 @@ dracula-theme.theme-dracula
 zhuangtongfa.material-theme
 betterthantomorrow.calva
 borkdude.clj-kondo
+asciidoctor.asciidoctor-vscode
