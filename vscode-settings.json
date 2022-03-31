@@ -1,9 +1,25 @@
 {
-  "editor.fontFamily": "'JetBrains Mono', 'Fantasque Sans Mono', Consolas, 'Fira Code Retina'",
-  "editor.fontSize": 15,
-  // "editor.lineHeight": 22,
-  // "editor.letterSpacing": 0.7,
-  // "editor.fontWeight": "100",
+  // // ********** Leitura no PC **********
+  // "editor.fontFamily": "'Segoe UI'",
+  // "editor.fontSize": 14,
+  // "editor.wordWrapColumn": 37,
+  // // **********  Leitura no Celular **********
+  // "editor.fontFamily": "'Roboto'",
+  // "editor.fontSize": 14,
+  // "editor.wordWrapColumn": 49,
+  // **********  Programação **********
+  "editor.fontFamily": "Roboto Mono",
+  // "editor.fontFamily": "Cascadia Mono",
+  // "editor.fontFamily": "JetBrains Mono",
+  // "editor.fontFamily": "Fira Code",
+  // "editor.fontFamily": "Fantasque Sans Mono",
+  // "editor.fontFamily": "Consolas",
+  "editor.fontSize": 16,
+  // "editor.wordWrap": "wordWrapColumn",
+  // "editor.wordWrapColumn": 120,
+  // "editor.lineHeight": 16,
+  // "editor.letterSpacing": -0.8,
+  // "editor.fontWeight": "900",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -15,92 +31,80 @@
   "editor.parameterHints.enabled": false,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.formatOnSave": true,
-  "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 120,
   "editor.foldingStrategy": "indentation",
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.indentation": true,
+  "editor.guides.highlightActiveIndentation": true,
   "editor.semanticHighlighting.enabled": true,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
-
-  "eslint.alwaysShowStatus": true,
+  "editor.fontLigatures": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "explorer.openEditors.visible": 0,
+  "problems.showCurrentInStatus": true,
+  "scm.diffDecorationsGutterWidth": 2,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/out": true
+  },
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Iosevka SS04 Extended', 'Fira Code Retina'",
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.fontSize": 12,
+  "window.menuBarVisibility": "toggle",
+  "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Monokai",
+  "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#00ffff"
+  },
+  // **************************************************************
+  // * Plugins
+  // **************************************************************
+  // JavaScript
+  // ==========
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
   ],
-
-  // "explorer.openEditors.visible": 0,
-
-  "gitlens.defaultDateStyle": "absolute",
-  "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:MM",
-
-  "problems.showCurrentInStatus": true,
-  "scm.diffDecorationsGutterWidth": 2,
-
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
-
-  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Iosevka SS04 Extended', 'Fira Code Retina'",
-  "terminal.integrated.fontSize": 15,
-  "terminal.integrated.allowChords": false,
-  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-
-  "window.zoomLevel": 1,
-  "window.menuBarVisibility": "toggle",
-  "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
-
-  "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "One Dark Pro",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.iconTheme": "vscode-icons",
-
-  // -- Language specific settings ------------------------------------
-
   "javascript.updateImportsOnFileMove.enabled": "never",
   "[javascript]": {
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [100]
-  },
-
-  "[javascriptreact]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [100]
-  },
-
-  "[typescript]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [100]
-  },
-
-  "[typescriptreact]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.rulers": [100]
-  },
-
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "html.suggest.html5": false,
-
-  "[markdown]": {
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
-    "editor.wrappingIndent": "same",
-    "editor.tabSize": 4,
     "editor.rulers": [80]
   },
-
-  "python.jediEnabled": false,
+  "[javascriptreact]": {
+    "editor.tabSize": 2,
+    "editor.rulers": [80]
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.rulers": [80]
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.rulers": [80]
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  // Golang
+  // ======
   "go.formatTool": "goimports",
+  // Dart
+  // ====
   "dart.openDevTools": "flutter",
+  "dart.debugExternalLibraries": false,
+  "dart.debugSdkLibraries": false,
   "[dart]": {
-    "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.rulers": [80],
     "editor.selectionHighlight": false,
@@ -109,9 +113,30 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-
-  // -- Vim Mode ------------------------------------------------------
-
+  // Git lens
+  // ========
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:MM",
+  // Markup languages
+  // ================
+  "html.suggest.html5": false,
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.wrappingIndent": "same",
+    "editor.tabSize": 4,
+    "editor.rulers": [80],
+    "editor.defaultFormatter": null
+  },
+  "[asciidoc]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.wrappingIndent": "same",
+    "editor.tabSize": 4,
+    "editor.rulers": [80]
+  },
+  // Vim mode
+  // ========
   "vim.easymotion": true,
   "vim.sneak": true,
   "vim.surround": true,
