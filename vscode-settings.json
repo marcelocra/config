@@ -8,13 +8,14 @@
   // "editor.fontSize": 14,
   // "editor.wordWrapColumn": 49,
   // **********  Programação **********
-  "editor.fontFamily": "Roboto Mono",
+  // "editor.fontFamily": "Roboto Mono",
   // "editor.fontFamily": "Cascadia Mono",
   // "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "Fira Code Retina",
   // "editor.fontFamily": "Fira Code",
   // "editor.fontFamily": "Fantasque Sans Mono",
   // "editor.fontFamily": "Consolas",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   // "editor.wordWrap": "wordWrapColumn",
   // "editor.wordWrapColumn": 120,
   // "editor.lineHeight": 16,
@@ -192,5 +193,6 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
-  }
+  },
+  "terminal.integrated.tabs.enabled": false
 }
