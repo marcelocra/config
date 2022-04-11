@@ -114,7 +114,8 @@
   },
   {
     "key": "ctrl+t",
-    "command": "workbench.action.toggleMaximizedPanel",
+    "command": "workbench.action.togglePanel",
+    // "command": "workbench.action.toggleMaximizedPanel",
     "when": "!activePanel"
   },
   {
@@ -218,5 +219,35 @@
     "key": "ctrl+shift+s",
     "command": "-paredit.splitSexp",
     "when": "editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "cursorWordPartRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+right",
+    "command": "cursorWordPartRightSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "cursorWordPartStartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+left",
+    "command": "cursorWordPartStartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "deleteWordPartLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+delete",
+    "command": "deleteWordPartRight",
+    "when": "textInputFocus && !editorReadonly"
   }
 ]
