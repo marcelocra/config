@@ -29,23 +29,18 @@ Unix (Bash):
 
 ## Files in the top level folder
 
-These files work in both those systems.
+These files work on both those systems.
 
 ### `.gitconfig`
 
 Locations (most likely... need to review):
 
-- Windows: C:\Users\$env:USERNAME\.gitconfig
-- Linux: /home/$USER/.gitconfig
-
-### `.gitignore`
-
-I put this here because I tested (and am testing) with a number of different
-ways to setup these dotfiles. Leaving it for now :).
+- Windows: `C:\Users\$env:USERNAME\.gitconfig`
+- Linux: `/home/$USER/.gitconfig`
 
 ### `Preferences.sublime-settings`
 
-Say whatever you want, Sublime Text is the best **notepad.exe** there is. I use
+Say whatever you want, Sublime Text is the best notepad there is. I use
 it as such and this is my configuration file.
 
 I don't use it as a full text editor, so no extensions and the like.
@@ -96,6 +91,11 @@ with a non-alian scripting language (looking at you, bash).)
 I played a bit with automating the installation of this config files, but never
 finished those scripts. Might finish some day, but until then I'm keeping the
 ideas around, as they are interesting.
+
+I put a `.gitignore` there because I tested (and am testing) with a number of
+different ways to setup these dotfiles. Leaving it there for now, to avoid
+pushing 500mb of node_modules.. :P.
+
 
 ## `archive`
 
