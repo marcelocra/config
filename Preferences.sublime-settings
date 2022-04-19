@@ -6,6 +6,7 @@
 	// "font_face": "Fira Code Light",  // Good size: 12
 	// "font_face": "Anonymous Pro",    // Good size: 13
 	"font_face": "IBM Plex Mono",       // Good size: 11
+	// "font_face": "Cascadia Code PL",       // Good size: 11
 	"font_size": 11,
 
 	// These settings control the size of the caret

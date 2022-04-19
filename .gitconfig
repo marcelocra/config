@@ -1,12 +1,12 @@
 [user]
-  email = marcelocralmeida@gmail.com   
+	email = 2532492+marcelocra@users.noreply.github.com
   name = Marcelo Almeida
 
 [alias]
   # Diff stuff.
   dw = diff --word-diff --color-words
   dwm = diff --word-diff --color-words master
-  d = diff --word-diff --color-words HEAD
+  d = dw HEAD
   ds = diff --stat  # Summary of current diff.
 
   # Other stuff.
@@ -33,13 +33,6 @@
   dagd = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(magenta)%aD%C(reset) %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(cyan)%d%C(reset)' --all
 
 [core]
-  autocrlf = input
-  editor = vim
+  autocrlf = true
+	editor = 'C:\\Program Files\\Sublime Text 3\\sublime_text.exe' -w
   pager = less -F -X
-
-[includeIf "gitdir:~/projects/kuadro/"]
-  path = ~/projects/kuadro/.gitconfig
-
-[includeIf "gitdir:C:/Users/marce/projects/kuadro/"]
-  path = "C:/Users/marce/projects/kuadro/.gitconfig"
-  editor = "\"C:/Users/marce/AppData/Local/Programs/Microsoft VS Code Insiders/Code - Insiders.exe\" --wait"
