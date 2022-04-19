@@ -11,11 +11,13 @@
   // "editor.fontFamily": "Roboto Mono",
   // "editor.fontFamily": "Cascadia Mono",
   // "editor.fontFamily": "JetBrains Mono",
-  "editor.fontFamily": "Fira Code Light",
+  // "editor.fontFamily": "Fira Code Light",
   // "editor.fontFamily": "Fira Code",
   // "editor.fontFamily": "Fantasque Sans Mono",
+  // "editor.fontFamily": "IBM Plex Mono",
+  "editor.fontFamily": "Anonymous Pro",
   // "editor.fontFamily": "Consolas",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   // "editor.wordWrap": "wordWrapColumn",
   // "editor.wordWrapColumn": 120,
   // "editor.lineHeight": 16,
@@ -42,6 +44,9 @@
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.cursorStyle": "line-thin",
+  "editor.cursorBlinking": "phase",
+  "editor.rulers": [80],
   "explorer.openEditors.visible": 0,
   "problems.showCurrentInStatus": true,
   "scm.diffDecorationsGutterWidth": 2,
@@ -62,8 +67,11 @@
   "workbench.colorTheme": "Monokai",
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#00ffff"
+    "editorCursor.foreground": "#00ffff",
+    "tree.indentGuidesStroke": "#00ffff"
   },
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always",
   // **************************************************************
   // * Plugins
   // **************************************************************
@@ -77,20 +85,16 @@
   ],
   "javascript.updateImportsOnFileMove.enabled": "never",
   "[javascript]": {
-    "editor.tabSize": 2,
-    "editor.rulers": [80]
+    "editor.tabSize": 2
   },
   "[javascriptreact]": {
-    "editor.tabSize": 2,
-    "editor.rulers": [80]
+    "editor.tabSize": 2
   },
   "[typescript]": {
-    "editor.tabSize": 2,
-    "editor.rulers": [80]
+    "editor.tabSize": 2
   },
   "[typescriptreact]": {
-    "editor.tabSize": 2,
-    "editor.rulers": [80]
+    "editor.tabSize": 2
   },
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
@@ -108,7 +112,6 @@
   "dart.debugSdkLibraries": false,
   "[dart]": {
     "editor.formatOnType": true,
-    "editor.rulers": [80],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
@@ -127,15 +130,13 @@
     "editor.wordWrapColumn": 80,
     "editor.wrappingIndent": "same",
     "editor.tabSize": 4,
-    "editor.rulers": [80],
     "editor.defaultFormatter": null
   },
   "[asciidoc]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
     "editor.wrappingIndent": "same",
-    "editor.tabSize": 4,
-    "editor.rulers": [80]
+    "editor.tabSize": 4
   },
   // Vim mode
   // ========
@@ -195,5 +196,7 @@
     "<C-a>": false,
     "<C-f>": false
   },
-  "terminal.integrated.tabs.enabled": false
+  "terminal.integrated.tabs.enabled": false,
+  "svelte.enable-ts-plugin": true,
+  "git.ignoreMissingGitWarning": true
 }
