@@ -1,7 +1,7 @@
 # Provides an interactive menu, somewhat like what zsh does on tab.
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
-<#
+<#------------------------------------------------------------------------------
  # Configures the prompt, to include some newlines between commands, an emoji
  # some details about what kind of terminal this is (debug? admin?) and the full
  # path to the current folder.
@@ -11,11 +11,54 @@ function prompt {
   $principal = [Security.Principal.WindowsPrincipal] $identity
   $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
 
-  "`n`n`n😎 " +
+  $mcra = '▬' * $(Get-Host).UI.RawUI.WindowSize.Width
+
+  "$mcra" +
 
   $(if (Test-Path variable:/PSDebugContext) { '[DBG] ' }
     elseif($principal.IsInRole($adminRole)) { '[ADMIN] ' }
     else { '' }
-  ) + 'PS [' + $(Get-Location) + '] em [' + $(Get-Date -Format "dMMMyy HH:mm") + "]`n" +
-  $(if ($NestedPromptLevel -ge 1) { '>>' }) + '> '
+  ) + '[' + $(Get-Location) + '] em [' + $(Get-Date -Format "dMMMyy HH:mm") + "] 😎 Rock on!`n" +
+  $(if ($NestedPromptLevel -ge 1) { '>>' }) + '🪟 PS> '
 }
+
+<#------------------------------------------------------------------------------
+ # Facilitates running Docker commands.
+ #>
+function docker-images-sort-by-size {
+  docker images --format="{{json .}}" |
+  convertfrom-json |
+  sort-object { [int]$_.Size } |
+  select-object Repository,Tag,ID,CreatedSince,Size |
+  format-table
+}
+Set-Alias -Name di-sort-by-size -Value docker-images-sort-by-size
+
+function docker-images-sort-by-repository {
+  docker images --format="{{json .}}" |
+  convertfrom-json |
+  sort-object Repository |
+  select-object Repository,Tag,ID,CreatedSince,Size |
+  format-table
+}
+Set-Alias -Name di-sort-by-name -Value docker-images-sort-by-repository
+
+function docker-images-sort-by-name-and-size {
+  docker images --format="{{json .}}" |
+  convertfrom-json |
+  sort-object Repository, { [int]$_.Size } |
+  select-object Repository,Tag,ID,CreatedSince,Size |
+  format-table
+}
+Set-Alias -Name di-sort-by-name-and-size -Value docker-images-sort-by-name-and-size
+
+function docker-run-standard {
+  Param(
+    [PSDefaultValue(Help = 'The Docker image name')]
+    $Image = "ubuntu",
+    [PSDefaultValue(Help = 'Which command to run')]
+    $Cmd = "bash")
+  docker run --rm -it -v ${PWD}:/home/dev --workdir=/home/app $Image $Cmd
+}
+Set-Alias -Name dr-rm-it -Value docker-run-standard
+

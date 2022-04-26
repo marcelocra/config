@@ -10,8 +10,8 @@
         {
             "font": 
             {
-                "face": "JetBrains Mono",
-                "size": 10
+                "face": "Source Code Pro",
+                "size": 12
             }
         },
         "list": 
@@ -67,6 +67,12 @@
                 "hidden": true,
                 "name": "Developer Command Prompt for VS 2017",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{bc2da056-dd06-5879-b969-1dfcefc8d2c7}",
+                "hidden": false,
+                "name": "openSUSE-Tumbleweed",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
