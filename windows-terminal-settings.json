@@ -10,8 +10,8 @@
         {
             "font": 
             {
-                "face": "Source Code Pro",
-                "size": 12
+                "face": "Anonymous Pro",
+                "size": 13
             }
         },
         "list": 
@@ -72,6 +72,18 @@
                 "guid": "{bc2da056-dd06-5879-b969-1dfcefc8d2c7}",
                 "hidden": false,
                 "name": "openSUSE-Tumbleweed",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{60c3e313-8e1a-58f6-8175-3650c2bd2b26}",
+                "hidden": false,
+                "name": "Ubuntu 22.04 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": true,
+                "name": "Ubuntu-22.04",
                 "source": "Windows.Terminal.Wsl"
             }
         ]
@@ -263,6 +275,29 @@
             "yellow": "#C4A000"
         },
         {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-22.04-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
             "background": "#000000",
             "black": "#000000",
             "blue": "#000080",
@@ -286,5 +321,5 @@
             "yellow": "#808000"
         }
     ],
-    "theme": "dark"
+    "theme": "light"
 }

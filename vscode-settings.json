@@ -7,6 +7,11 @@
   // "editor.fontFamily": "Roboto Mono",
   // "editor.fontSize": 15,
 
+  // Inconsolata
+  // -----------
+  "editor.fontFamily": "Inconsolata",
+  "editor.fontSize": 16,
+
   // // JetBrains Mono
   // // --------------
   // "editor.fontFamily": "JetBrains Mono",
@@ -37,13 +42,13 @@
   // "editor.fontFamily": "Anonymous Pro",
   // "editor.fontSize": 15,
 
-  // Consolas
-  // --------
-  "editor.fontFamily": "Consolas",
-  "editor.fontSize": 14,
+  // // Consolas
+  // // --------
+  // "editor.fontFamily": "Consolas",
+  // "editor.fontSize": 14,
 
-  // Cascadia Code
-  // -------------
+  // // Cascadia Code
+  // // -------------
   // "editor.fontFamily": "Cascadia Code PL Light", // Good size: 15
   // // ss19: dashed zero; ss01: stylistic alternates for italics.
   // // not sure what 'calt' does, but it is reccomended in the docs:
@@ -100,7 +105,8 @@
     "**/out": true
   },
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.allowChords": false,
+  "terminal.integrated.allowChords": true,
+  "terminal.integrated.commandsToSkipShell": [""],
   "terminal.integrated.fontFamily": "'JetBrains Mono', 'Iosevka SS04 Extended', 'Fira Code Retina'",
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.tabs.enabled": false,
@@ -116,6 +122,9 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.indent": 20,
   "workbench.tree.renderIndentGuides": "always",
+  "files.associations": {
+    "*.erb": "html"
+  }
 
   //============================================================================
   // JavaScript
@@ -264,6 +273,23 @@
     "enabled": true,
     "width": 120,
     "maxLength": 50
+  },
+  "[clojure]": {
+    "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`",
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.formatOnType": true,
+    "editor.autoIndent": "full",
+    "editor.formatOnPaste": true,
+    "files.trimTrailingWhitespace": false,
+    // "editor.matchBrackets": "never",
+    // "editor.guides.indentation": false,
+    "editor.parameterHints.enabled": false,
+    "editor.unicodeHighlight.allowedCharacters": {
+      " ": true,
+      "꞉": true
+    },
+    "editor.defaultFormatter": "betterthantomorrow.calva"
   },
 
   //============================================================================
