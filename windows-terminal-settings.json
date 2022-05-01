@@ -8,10 +8,12 @@
     {
         "defaults": 
         {
+            "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "Anonymous Pro",
-                "size": 13
+                "face": "Fira Code",
+                "size": 10,
+                "weight": "light"
             }
         },
         "list": 
