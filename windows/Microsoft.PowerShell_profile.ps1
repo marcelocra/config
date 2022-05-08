@@ -62,3 +62,4 @@ function docker-run-standard {
 }
 Set-Alias -Name dr-rm-it -Value docker-run-standard
 
+Set-Alias -Name vim -Value subl
