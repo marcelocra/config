@@ -115,7 +115,7 @@
   "terminal.integrated.tabs.enabled": false,
   "window.menuBarVisibility": "toggle",
   "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#00ffff",
     "tree.indentGuidesStroke": "#00ffff"
