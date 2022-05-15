@@ -1,6 +1,8 @@
 # Provides an interactive menu, somewhat like what zsh does on tab.
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
+# [ FUNCTIONS ] ----------------------------------------------------------------
+
 <#------------------------------------------------------------------------------
  # Configures the prompt, to include some newlines between commands, an emoji
  # some details about what kind of terminal this is (debug? admin?) and the full
@@ -32,7 +34,6 @@ function docker-images-sort-by-size {
   select-object Repository,Tag,ID,CreatedSince,Size |
   format-table
 }
-Set-Alias -Name di-sort-by-size -Value docker-images-sort-by-size
 
 function docker-images-sort-by-repository {
   docker images --format="{{json .}}" |
@@ -41,7 +42,6 @@ function docker-images-sort-by-repository {
   select-object Repository,Tag,ID,CreatedSince,Size |
   format-table
 }
-Set-Alias -Name di-sort-by-name -Value docker-images-sort-by-repository
 
 function docker-images-sort-by-name-and-size {
   docker images --format="{{json .}}" |
@@ -50,7 +50,6 @@ function docker-images-sort-by-name-and-size {
   select-object Repository,Tag,ID,CreatedSince,Size |
   format-table
 }
-Set-Alias -Name di-sort-by-name-and-size -Value docker-images-sort-by-name-and-size
 
 function docker-run-standard {
   Param(
@@ -60,6 +59,22 @@ function docker-run-standard {
     $Cmd = "bash")
   docker run --rm -it -v ${PWD}:/home/dev --workdir=/home/app $Image $Cmd
 }
-Set-Alias -Name dr-rm-it -Value docker-run-standard
 
+function source-profile {
+  . $PROFILE
+}
+
+# [ ENVIRONMENT STUFF ] --------------------------------------------------------
+
+$env:GITHUB_MARCELOCODES = "67549662+marcelocodes@users.noreply.github.com"
+$env:GITHUB_MARCELOCRA = "2532492+marcelocra@users.noreply.github.com"
+
+# [ ALIASES ] ------------------------------------------------------------------
+
+Set-Alias -Name di-sort-by-size -Value docker-images-sort-by-size
+Set-Alias -Name di-sort-by-name -Value docker-images-sort-by-repository
+Set-Alias -Name di-sort-by-name-and-size -Value docker-images-sort-by-name-and-size
+Set-Alias -Name dr-rm-it -Value docker-run-standard
 Set-Alias -Name vim -Value subl
+Set-Alias -Name l -Value ls
+Set-Alias -Name reload-profile -Value source-profile

@@ -17,11 +17,11 @@
   // "editor.fontFamily": "JetBrains Mono",
   // "editor.fontSize": 15,
 
-  // Fira Code Light
-  // ---------------
-  "editor.fontFamily": "Fira Code Light",
-  "editor.fontLigatures": false,
-  "editor.fontSize": 13,
+  // // Fira Code Light
+  // // ---------------
+  // "editor.fontFamily": "Fira Code Light",
+  // "editor.fontLigatures": false,
+  // "editor.fontSize": 13,
 
   // // Fira Code
   // // ---------
@@ -33,10 +33,10 @@
   // "editor.fontFamily": "Fantasque Sans Mono",
   // "editor.fontSize": 15,
 
-  // // IBM Plex Mono
-  // // -------------
-  // "editor.fontFamily": "IBM Plex Mono Light",
-  // "editor.fontSize": 13,
+  // IBM Plex Mono
+  // -------------
+  "editor.fontFamily": "IBM Plex Mono",
+  "editor.fontSize": 13,
 
   // // Anonymous Pro
   // // -------------
