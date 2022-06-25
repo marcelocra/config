@@ -130,6 +130,16 @@
     "command": "-editor.action.trimTrailingWhitespace",
     "when": "editorTextFocus && !editorReadonly"
   },
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Insert' || vim.mode == 'Visual'"
+  },
+  {
+    "key": "ctrl+x",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Insert' || vim.mode == 'Visual'"
+  },
 
   //============================================================================
   //= calva
@@ -225,36 +235,36 @@
   //= camelCase movements between humps, aka cursorWordPart.
   //============================================================================
 
-  // {
-  //   "key": "ctrl+right",
-  //   "command": "cursorWordPartRight",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "ctrl+shift+right",
-  //   "command": "cursorWordPartRightSelect",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "ctrl+left",
-  //   "command": "cursorWordPartStartLeft",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "ctrl+shift+left",
-  //   "command": "cursorWordPartStartLeftSelect",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "ctrl+backspace",
-  //   "command": "deleteWordPartLeft",
-  //   "when": "textInputFocus && !editorReadonly"
-  // },
-  // {
-  //   "key": "ctrl+delete",
-  //   "command": "deleteWordPartRight",
-  //   "when": "textInputFocus && !editorReadonly"
-  // },
+  {
+    "key": "ctrl+right",
+    "command": "cursorWordPartRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+right",
+    "command": "cursorWordPartRightSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+left",
+    "command": "cursorWordPartStartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+left",
+    "command": "cursorWordPartStartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "deleteWordPartLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+delete",
+    "command": "deleteWordPartRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
 
   //============================================================================
   //= misc

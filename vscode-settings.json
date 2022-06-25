@@ -115,19 +115,18 @@
   "terminal.integrated.tabs.enabled": false,
   "window.menuBarVisibility": "toggle",
   "window.title": "${dirty}${activeEditorLong}${separator}${appName}",
-  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#00ffff",
     "tree.indentGuidesStroke": "#00ffff"
   },
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "GitHub Dark",
   // "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.indent": 20,
   "workbench.tree.renderIndentGuides": "always",
   "files.associations": {
     "*.erb": "html"
-  }
+  },
 
   //============================================================================
   // JavaScript
@@ -173,11 +172,12 @@
   //= Dart
   //============================================================================
   "dart.openDevTools": "flutter",
-  "dart.debugExternalLibraries": false,
+  "dart.debugExternalPackageLibraries": false,
   "dart.debugSdkLibraries": false,
   "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
     "editor.formatOnType": true,
-    "editor.selectionHighlight": false,
+    // "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
@@ -223,15 +223,20 @@
     {
       "before": ["f", "j"],
       "after": ["<esc>"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "w"],
+      "commands": [":w"],
+      "after": ["<esc>"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["]", "<space>"],
+      "before": ["]", "<leader>"],
       "after": ["o", "<esc>", "k"]
     },
     {
-      "before": ["[", "<space>"],
+      "before": ["[", "<leader>"],
       "after": ["O", "<esc>", "j"]
     },
     {
@@ -257,9 +262,17 @@
     {
       "before": ["<C-n>"],
       "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "w"],
+      "commands": [":w"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "x"],
+      "commands": [":x"]
     }
   ],
-  "vim.leader": "<space>",
+  "vim.leader": ",",
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
